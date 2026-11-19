@@ -1,0 +1,160 @@
+{
+  "phase": "P12",
+  "repeatability": "passed",
+  "reconciliation": "passed",
+  "scenario": "Real minute data, 10000-unit buy, 4000/6000 partial closes, fixed spread/commission/slippage",
+  "result": {
+    "version": "p12-account-v1",
+    "symbol": "EUR/USD",
+    "start": 1704456420,
+    "clock": 1704456720,
+    "orders": [
+      {
+        "id": "one",
+        "side": "buy",
+        "kind": "market",
+        "units": 10000,
+        "price": null,
+        "submitted_at": 1704456420,
+        "status": "filled",
+        "stop_loss": "1.08000",
+        "take_profit": "1.12000",
+        "filled_at": 1704456480,
+        "fill_price": "1.09193"
+      }
+    ],
+    "positions": [
+      {
+        "id": "position-one",
+        "order_id": "one",
+        "symbol": "EUR/USD",
+        "side": "buy",
+        "units": 10000,
+        "remaining_units": 0,
+        "entry_price": "1.09193",
+        "entry_bid": "1.09178",
+        "opened_at": 1704456480,
+        "bar_open_time": 1704456420,
+        "entry_basis": "open",
+        "status": "closed",
+        "stop_loss": "1.08000",
+        "take_profit": "1.12000",
+        "realized_pnl": "-3.28",
+        "closed_at": 1704456600
+      }
+    ],
+    "events": [
+      {
+        "sequence": 1,
+        "type": "submitted",
+        "time": 1704456420,
+        "order_id": "one",
+        "command_id": "buy"
+      },
+      {
+        "sequence": 2,
+        "type": "accepted",
+        "time": 1704456420,
+        "order_id": "one",
+        "command_id": "buy",
+        "price": null
+      },
+      {
+        "sequence": 3,
+        "type": "filled",
+        "time": 1704456480,
+        "order_id": "one",
+        "position_id": "position-one",
+        "price": "1.09193",
+        "units": 10000,
+        "commission": "0.35",
+        "bar_open_time": 1704456420,
+        "price_basis": "open",
+        "intrabar_time_unknown": false
+      },
+      {
+        "sequence": 4,
+        "type": "close_accepted",
+        "time": 1704456480,
+        "order_id": "one",
+        "command_id": "partial",
+        "units": 4000
+      },
+      {
+        "sequence": 5,
+        "type": "closed",
+        "time": 1704456540,
+        "order_id": "one",
+        "position_id": "position-one",
+        "units": 4000,
+        "price": "1.09162",
+        "gross_pnl": "-1.24",
+        "commission": "0.14",
+        "balance": "9998.27",
+        "reason": "manual",
+        "ambiguous": false,
+        "bar_open_time": 1704456480,
+        "command_id": "partial",
+        "conversion_price": null
+      },
+      {
+        "sequence": 6,
+        "type": "close_accepted",
+        "time": 1704456540,
+        "order_id": "one",
+        "command_id": "remaining",
+        "units": null
+      },
+      {
+        "sequence": 7,
+        "type": "closed",
+        "time": 1704456600,
+        "order_id": "one",
+        "position_id": "position-one",
+        "units": 6000,
+        "price": "1.09159",
+        "gross_pnl": "-2.04",
+        "commission": "0.21",
+        "balance": "9996.02",
+        "reason": "manual",
+        "ambiguous": false,
+        "bar_open_time": 1704456540,
+        "command_id": "remaining",
+        "conversion_price": null
+      }
+    ],
+    "pending_closes": [],
+    "account": {
+      "balance": "9996.02",
+      "realized_pnl": "-3.28",
+      "commission_paid": "0.70",
+      "unrealized_pnl": "0.00",
+      "equity": "9996.02",
+      "used_margin": "0.00",
+      "free_margin": "9996.02"
+    },
+    "mark_time": 1704456720,
+    "margin_call": false,
+    "settings": {
+      "initial_balance": 10000,
+      "leverage": 30,
+      "commission_per_100k": 3.5,
+      "slippage_pips": 0.5
+    },
+    "policy": {
+      "currency": "USD",
+      "spread_price": "0.00010",
+      "slippage_price": "0.00005",
+      "commission": "USD per 100000 base units per fill side; rounded to cents",
+      "ambiguity": "stop first; intrabar entry TP-only deferred",
+      "financing": "excluded",
+      "automatic_liquidation": "excluded",
+      "conversion": "JPY P&L divided by executable exit/mark price; USD quotes unchanged"
+    },
+    "dataset_id": "e7a95dc184be58df2913a1cde56943ad5d30b9013977fae845af90ea0a0eff01",
+    "ended": false,
+    "source_label": "Dukascopy EUR/USD BID M1 \u00b7 2024 Jan 2\u20138",
+    "input_price_basis_verified": false,
+    "notice": "Simulated fixed spread/slippage; financing and automatic liquidation excluded. Missing periods use last observed valuation."
+  }
+}

@@ -1,0 +1,229 @@
+{
+  "$defs": {
+    "CandleEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "open_time": {
+          "maximum": 4102444800,
+          "minimum": 0,
+          "title": "Open Time",
+          "type": "integer"
+        },
+        "close_time": {
+          "maximum": 4102444800,
+          "minimum": 0,
+          "title": "Close Time",
+          "type": "integer"
+        },
+        "open": {
+          "exclusiveMinimum": 0,
+          "title": "Open",
+          "type": "number"
+        },
+        "high": {
+          "exclusiveMinimum": 0,
+          "title": "High",
+          "type": "number"
+        },
+        "low": {
+          "exclusiveMinimum": 0,
+          "title": "Low",
+          "type": "number"
+        },
+        "close": {
+          "exclusiveMinimum": 0,
+          "title": "Close",
+          "type": "number"
+        }
+      },
+      "required": [
+        "open_time",
+        "close_time",
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "title": "CandleEvidence",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "title": "Id",
+      "type": "string"
+    },
+    "finding_id": {
+      "title": "Finding Id",
+      "type": "string"
+    },
+    "source_id": {
+      "title": "Source Id",
+      "type": "string"
+    },
+    "symbol": {
+      "enum": [
+        "EUR/USD",
+        "GBP/USD",
+        "USD/JPY"
+      ],
+      "title": "Symbol",
+      "type": "string"
+    },
+    "timeframe": {
+      "enum": [
+        "1m",
+        "5m",
+        "15m",
+        "1h",
+        "4h",
+        "d1",
+        "w1"
+      ],
+      "title": "Timeframe",
+      "type": "string"
+    },
+    "calendar": {
+      "enum": [
+        "fixed-utc-v1",
+        "utc-weekdays-v1",
+        "fx-ny-17-v1"
+      ],
+      "title": "Calendar",
+      "type": "string"
+    },
+    "kind": {
+      "enum": [
+        "occurrence",
+        "confirmation",
+        "invalidation",
+        "expiration",
+        "revision"
+      ],
+      "title": "Kind",
+      "type": "string"
+    },
+    "finding_kind": {
+      "enum": [
+        "pivot_high",
+        "pivot_low",
+        "bos",
+        "choch",
+        "fvg",
+        "order_block",
+        "rsi_divergence"
+      ],
+      "title": "Finding Kind",
+      "type": "string"
+    },
+    "occurred_at": {
+      "maximum": 4102444800,
+      "minimum": 0,
+      "title": "Occurred At",
+      "type": "integer"
+    },
+    "available_at": {
+      "maximum": 4102444800,
+      "minimum": 0,
+      "title": "Available At",
+      "type": "integer"
+    },
+    "status": {
+      "enum": [
+        "provisional",
+        "confirmed",
+        "invalidated",
+        "expired"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "direction": {
+      "enum": [
+        "bullish",
+        "bearish",
+        "neutral"
+      ],
+      "title": "Direction",
+      "type": "string"
+    },
+    "prices": {
+      "items": {
+        "type": "number"
+      },
+      "minItems": 1,
+      "title": "Prices",
+      "type": "array"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/CandleEvidence"
+      },
+      "minItems": 1,
+      "title": "Evidence",
+      "type": "array"
+    },
+    "structure_label": {
+      "anyOf": [
+        {
+          "enum": [
+            "HH",
+            "HL",
+            "LH",
+            "LL",
+            "EQH",
+            "EQL"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Structure Label"
+    },
+    "reason": {
+      "title": "Reason",
+      "type": "string"
+    },
+    "related_finding_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Related Finding Id"
+    },
+    "calculation_version": {
+      "const": "p05-causal-v1",
+      "default": "p05-causal-v1",
+      "title": "Calculation Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "finding_id",
+    "source_id",
+    "symbol",
+    "timeframe",
+    "calendar",
+    "kind",
+    "finding_kind",
+    "occurred_at",
+    "available_at",
+    "status",
+    "direction",
+    "prices",
+    "evidence",
+    "reason"
+  ],
+  "title": "Event",
+  "type": "object"
+}

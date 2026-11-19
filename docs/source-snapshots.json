@@ -1,0 +1,66 @@
+{
+  "archives": [
+    {
+      "archive": "FX-Signal-Desk-main.zip",
+      "sha256": "4952cd0d07f8a3f5bd95f525bf062836b4e81ce70de9b7f7a5d7138c53d47b61"
+    },
+    {
+      "archive": "ForexDashboard-main.zip",
+      "sha256": "a4a4eed084ed16c00742d0a4577e0560a122f175ccc41978d644cbbf742eb705"
+    },
+    {
+      "archive": "Sturct-ai-main.zip",
+      "sha256": "79219b0026c8526bcf0ae5121a36def8e8903052a47862176ed7aa15b865709d"
+    },
+    {
+      "archive": "forex-scalper-agent-v2-main.zip",
+      "sha256": "b05a1acbb63affd5610f7c0886c306dfdf21ee5534ad7cb4749398dbba105f96"
+    }
+  ],
+  "syntax": [
+    {
+      "repo": "FX-Signal-Desk-main",
+      "files": 63,
+      "errors": []
+    },
+    {
+      "repo": "ForexDashboard-main",
+      "files": 1,
+      "errors": []
+    },
+    {
+      "repo": "Sturct-ai-main",
+      "files": 39,
+      "errors": [
+        {
+          "file": "Sturct-ai-main/artifacts/trading-api/services/zones_engine.py",
+          "line": 46,
+          "error": "parameter without a default follows parameter with a default"
+        },
+        {
+          "file": "Sturct-ai-main/artifacts/trading-api/services/candle_pattern_engine.py",
+          "line": 78,
+          "error": "parameter without a default follows parameter with a default"
+        }
+      ]
+    },
+    {
+      "repo": "forex-scalper-agent-v2-main",
+      "files": 66,
+      "errors": []
+    }
+  ],
+  "calculation_checks": [
+    {
+      "check": "FX Signal Desk RSI on 40 strictly increasing closes",
+      "expected": "100 after warmup",
+      "actual_last": "nan",
+      "status": "FAIL"
+    },
+    {
+      "check": "Scalper sorted-extreme divergence predicates",
+      "cases": 24,
+      "result": "Both price predicates false in all cases; confirms source-level ordering defect."
+    }
+  ]
+}

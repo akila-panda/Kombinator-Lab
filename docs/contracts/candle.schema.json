@@ -1,0 +1,150 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "minLength": 1,
+      "pattern": ".*\\S.*",
+      "title": "Id",
+      "type": "string"
+    },
+    "symbol": {
+      "enum": [
+        "EUR/USD",
+        "GBP/USD",
+        "USD/JPY"
+      ],
+      "title": "Symbol",
+      "type": "string"
+    },
+    "timeframe": {
+      "enum": [
+        "1m",
+        "5m",
+        "15m",
+        "1h",
+        "4h",
+        "d1",
+        "w1"
+      ],
+      "title": "Timeframe",
+      "type": "string"
+    },
+    "calendar": {
+      "default": "fixed-utc-v1",
+      "enum": [
+        "fixed-utc-v1",
+        "utc-weekdays-v1",
+        "fx-ny-17-v1"
+      ],
+      "title": "Calendar",
+      "type": "string"
+    },
+    "source_id": {
+      "minLength": 1,
+      "pattern": ".*\\S.*",
+      "title": "Source Id",
+      "type": "string"
+    },
+    "open_time": {
+      "maximum": 4102444800,
+      "minimum": 0,
+      "title": "Open Time",
+      "type": "integer"
+    },
+    "close_time": {
+      "maximum": 4102444800,
+      "minimum": 0,
+      "title": "Close Time",
+      "type": "integer"
+    },
+    "observed_at": {
+      "maximum": 4102444800,
+      "minimum": 0,
+      "title": "Observed At",
+      "type": "integer"
+    },
+    "state": {
+      "enum": [
+        "completed",
+        "forming"
+      ],
+      "title": "State",
+      "type": "string"
+    },
+    "open": {
+      "exclusiveMinimum": 0,
+      "title": "Open",
+      "type": "number"
+    },
+    "high": {
+      "exclusiveMinimum": 0,
+      "title": "High",
+      "type": "number"
+    },
+    "low": {
+      "exclusiveMinimum": 0,
+      "title": "Low",
+      "type": "number"
+    },
+    "close": {
+      "exclusiveMinimum": 0,
+      "title": "Close",
+      "type": "number"
+    },
+    "volume": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Volume"
+    },
+    "volume_type": {
+      "default": "unknown",
+      "enum": [
+        "tick_count",
+        "base_units",
+        "quote_units",
+        "unknown"
+      ],
+      "title": "Volume Type",
+      "type": "string"
+    },
+    "quality_flags": {
+      "items": {
+        "enum": [
+          "synthetic",
+          "unverified_source",
+          "gap_before_unclassified",
+          "missing_scheduled_bars_before",
+          "scheduled_closure_before",
+          "volume_unknown"
+        ],
+        "type": "string"
+      },
+      "title": "Quality Flags",
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "symbol",
+    "timeframe",
+    "source_id",
+    "open_time",
+    "close_time",
+    "observed_at",
+    "state",
+    "open",
+    "high",
+    "low",
+    "close"
+  ],
+  "title": "CanonicalCandle",
+  "type": "object"
+}

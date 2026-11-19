@@ -1,0 +1,37 @@
+{
+  "phase": "P06",
+  "date": "2026-11-11",
+  "status": "complete",
+  "packets": [
+    "P06-A",
+    "P06-B"
+  ],
+  "tests": {
+    "passed": 147,
+    "failed": 0,
+    "duration_seconds": 29.87,
+    "warning": "Starlette TestClient httpx deprecation"
+  },
+  "checks": {
+    "dependency_consistency": "passed",
+    "typescript_vite_build": "passed",
+    "real_http_smoke": "passed including sentiment archive import and clock availability",
+    "git_diff_check": "passed"
+  },
+  "source": {
+    "connected": "user-imported OANDA-format archive",
+    "provenance_verified": false,
+    "live_provider": "unavailable; no matching connector",
+    "credentials_requested": false,
+    "real_provider_download": false
+  },
+  "versions": {
+    "contracts": "1.3.0",
+    "sentiment_archive_sqlite": 1,
+    "historical_sqlite": 2,
+    "sentiment_calculation": "p06-imported-books-v1",
+    "historical_events": "p05-causal-v1"
+  },
+  "browser": "Upload not retried; known extension file-URL permission limitation. Frontend build and API workflow verified.",
+  "next": "P07 only after explicit user authorization"
+}

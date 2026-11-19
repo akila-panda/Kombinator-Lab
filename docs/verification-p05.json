@@ -1,0 +1,43 @@
+{
+  "phase": "P05",
+  "date": "2026-11-11",
+  "status": "complete",
+  "packets": [
+    "P05-A",
+    "P05-B"
+  ],
+  "tests": {
+    "passed": 130,
+    "failed": 0,
+    "duration_seconds": 24.18,
+    "warning": "Starlette TestClient httpx deprecation"
+  },
+  "checks": {
+    "dependency_consistency": "passed",
+    "typescript_vite_build": "passed; rerun after final stale-display guard",
+    "real_http_smoke": "passed including causal journal",
+    "diff_whitespace": "passed"
+  },
+  "browser": {
+    "history_panel": "passed",
+    "retrospective_labels": "passed",
+    "replay_cutoff": 9999,
+    "replay_clock": "2025-08-05T15:00:00Z",
+    "console_errors_final_check": [],
+    "screenshot": "../p05-history-preview.png",
+    "file_upload": "not retried; P03 permission limitation retained"
+  },
+  "versions": {
+    "contracts": "1.2.0",
+    "sqlite": 2,
+    "event_calculation": "p05-causal-v1",
+    "snapshot_calculation": "p05-snapshot-v1"
+  },
+  "limitations": [
+    "Supplied closed-bar reconstruction; provider delivery not verified",
+    "Retrospective supply/demand/SR/snapshot classifications excluded as causal signals",
+    "Observed-bar confirmation and explicit 160-bar expiry policy",
+    "Full-size performance not certified; complete prefix recomputed"
+  ],
+  "next": "P06 only after explicit user authorization"
+}

@@ -1,0 +1,142 @@
+{
+  "date": "2026-11-17",
+  "scope": "Research only. No Pine execution or trading-performance validation.",
+  "attachments": [
+    {
+      "id": "A1",
+      "title": "Smart Money Concepts",
+      "path": "/Users/akilaranasinghe/.codex/attachments/8d32df7f-f36e-4a4a-b6dd-6742db79a51e/Pasted text.txt",
+      "sha256": "a8046ad353c1b495e3c31e79365d7658a295be743ba56293e7d4c861813af48b",
+      "lines": 848,
+      "notice": [
+        "// This work is licensed under a Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) https://creativecommons.org/licenses/by-nc-sa/4.0/",
+        "// \u00a9 LuxAlgo",
+        ""
+      ],
+      "inspection": "static source review; not compiled or executed"
+    },
+    {
+      "id": "A2",
+      "title": "Significant Breakout Levels (FVG)",
+      "path": "/Users/akilaranasinghe/.codex/attachments/16ccc2f4-59f3-4c65-8031-518363f964eb/Pasted text.txt",
+      "sha256": "058af193ad9d7bdd6e843789190fe1f5c487e328eb0e0cd99540ada1322a221f",
+      "lines": 151,
+      "notice": [
+        "// This Pine Script\u00ae code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/",
+        "// \u00a9 Quant",
+        ""
+      ],
+      "inspection": "static source review; not compiled or executed"
+    },
+    {
+      "id": "A3",
+      "title": "Support & Resistance Pro Toolkit",
+      "path": "/Users/akilaranasinghe/.codex/attachments/e5e0bf63-e47f-439e-a980-1f9ed24a2e5c/Pasted text.txt",
+      "sha256": "1c62d2bc66a867af81404bdd25dd6734131eae47b21aa05271929e0e76e8e047",
+      "lines": 457,
+      "notice": [
+        "// This work is licensed under a Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) https://creativecommons.org/licenses/by-nc-sa/4.0/",
+        "// \u00a9 LuxAlgo",
+        ""
+      ],
+      "inspection": "static source review; not compiled or executed"
+    },
+    {
+      "id": "A4",
+      "title": "RSI Divergence: Out-of-Sample Optimizer",
+      "path": "/Users/akilaranasinghe/.codex/attachments/f0e819d8-e9ac-4422-80f1-456e2865946b/Pasted text.txt",
+      "sha256": "45c291d72211fac88c5b969bc7f5012af240b6e73ded077d7c59b3ce4c90d3c0",
+      "lines": 886,
+      "notice": [
+        "// This work is licensed under a Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) https://creativecommons.org/licenses/by-nc-sa/4.0/",
+        "// \u00a9 LuxAlgo",
+        "//@version=6"
+      ],
+      "inspection": "static source review; not compiled or executed"
+    },
+    {
+      "id": "A5",
+      "title": "Pure Price Action Liquidity Sweeps",
+      "path": "/Users/akilaranasinghe/.codex/attachments/13f6dc17-bb4a-4b9f-8e39-321abe239c2a/Pasted text.txt",
+      "sha256": "8350457d5132b1e25072252b1c52e444aada37cd7f793f605717912f72bbffef",
+      "lines": 153,
+      "notice": [
+        "// This work is licensed under a Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) https://creativecommons.org/licenses/by-nc-sa/4.0/",
+        "// \u00a9 LuxAlgo",
+        ""
+      ],
+      "inspection": "static source review; not compiled or executed"
+    },
+    {
+      "id": "A6",
+      "title": "ICT Macros",
+      "path": "/Users/akilaranasinghe/.codex/attachments/40081718-a6b0-49e4-808b-5c4835c2cc2c/Pasted text.txt",
+      "sha256": "ff913e2883c8f0b97998a4520bcc9528a6abe4779f57e9a24dda2036f62e4ea2",
+      "lines": 403,
+      "notice": [
+        "// This work is licensed under a Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) https://creativecommons.org/licenses/by-nc-sa/4.0/",
+        "// \u00a9 LuxAlgo",
+        ""
+      ],
+      "inspection": "static source review; not compiled or executed"
+    },
+    {
+      "id": "A7",
+      "title": "Support and Resistance Signals MTF",
+      "path": "/Users/akilaranasinghe/.codex/attachments/384feca5-bc34-4fb9-82ec-6246a9566cda/Pasted text.txt",
+      "sha256": "5dc42fed8e37c691c862893cce7d8082114833b79cb40fccad87342263e37a82",
+      "lines": 690,
+      "notice": [
+        "// This work is licensed under a Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) https://creativecommons.org/licenses/by-nc-sa/4.0/",
+        "// \u00a9 LuxAlgo",
+        " "
+      ],
+      "inspection": "static source review; not compiled or executed"
+    },
+    {
+      "id": "A8",
+      "title": "Market Structure (Intrabar)",
+      "path": "/Users/akilaranasinghe/.codex/attachments/458cfbac-8367-4609-8a6c-ed1b8f7f92ff/Pasted text.txt",
+      "sha256": "cf507c3f23b068be11ac07a03a715144d64e17a02d5ca585458c5d3a7aa27774",
+      "lines": 310,
+      "notice": [
+        "// This work is licensed under a Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) https://creativecommons.org/licenses/by-nc-sa/4.0/",
+        "// \u00a9 LuxAlgo",
+        " "
+      ],
+      "inspection": "static source review; not compiled or executed"
+    }
+  ],
+  "inline": [
+    {
+      "id": "I1",
+      "title": "Displacement Sweep Reversal with FVG",
+      "status": "incomplete: ends during pivot-high update",
+      "source": "User message; not a separate attached file"
+    },
+    {
+      "id": "I2",
+      "title": "Ascending/descending/symmetrical Triangle",
+      "status": "incomplete: constants and settings only",
+      "source": "User message; not a separate attached file"
+    },
+    {
+      "id": "I3",
+      "title": "Trendlines with Breaks",
+      "status": "complete-looking inline body; v6 numeric boolean incompatibility",
+      "source": "User message; not a separate attached file"
+    },
+    {
+      "id": "I4",
+      "title": "Trendline Liquidity",
+      "status": "incomplete: constants and partial settings only",
+      "source": "User message; not a separate attached file"
+    },
+    {
+      "id": "I5",
+      "title": "Divergence Variants & Confirmation",
+      "status": "incomplete: constants only",
+      "source": "User message; not a separate attached file"
+    }
+  ]
+}

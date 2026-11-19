@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-09",
+  "integration_tests": {
+    "passed": 16,
+    "failed": 0
+  },
+  "frontend": "TypeScript + Vite production build passed",
+  "browser": [
+    "initial chart rendering",
+    "evidence selection and selected price line",
+    "1h to 4h switch",
+    "replay cutoff 10000 to 7999 and changed analysis",
+    "restored default"
+  ],
+  "not_tested": [
+    "upstream full test suites",
+    "live market feeds",
+    "browser file upload interactions",
+    "mobile viewport",
+    "predictive performance"
+  ]
+}

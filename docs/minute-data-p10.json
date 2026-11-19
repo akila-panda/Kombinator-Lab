@@ -1,0 +1,197 @@
+{
+  "sources": [
+    {
+      "url": "https://jetta.dukascopy.com/v1/candles/minute/EUR-USD/BID/2024/1/2",
+      "sha256": "782ad4113bd933255f69625504b2817752f03d307dd850239ad66f428bca81d8",
+      "rows": 1438
+    },
+    {
+      "url": "https://jetta.dukascopy.com/v1/candles/minute/EUR-USD/BID/2024/1/3",
+      "sha256": "a552242a855b54b6b40b38179d49c385dc4b27f4ad6bb63826d45d3260e10971",
+      "rows": 1435
+    },
+    {
+      "url": "https://jetta.dukascopy.com/v1/candles/minute/EUR-USD/BID/2024/1/4",
+      "sha256": "6e47ac34c5f315d4ccc92987ca316087c6ffe6102f9bfa9e36ef1cb7f9371ba1",
+      "rows": 1434
+    },
+    {
+      "url": "https://jetta.dukascopy.com/v1/candles/minute/EUR-USD/BID/2024/1/5",
+      "sha256": "d452dca746b7f19e16f26fee3667ccbdae45572a8e1e2e8ae02e540e0233f89a",
+      "rows": 1318
+    },
+    {
+      "url": "https://jetta.dukascopy.com/v1/candles/minute/EUR-USD/BID/2024/1/6",
+      "sha256": "c7d4d841a103c98733e157a321baa712de472118980f808b3dc46abb7db1f3e7",
+      "rows": 0
+    },
+    {
+      "url": "https://jetta.dukascopy.com/v1/candles/minute/EUR-USD/BID/2024/1/7",
+      "sha256": "8d6f906611e76796bf3070b78079f6989ef9aa181c31756b683f3411e6c30e6a",
+      "rows": 114
+    },
+    {
+      "url": "https://jetta.dukascopy.com/v1/candles/minute/EUR-USD/BID/2024/1/8",
+      "sha256": "23ec9a07a154e095375d539cd4c08612365544c7feae1987676bf9e2c7f957e9",
+      "rows": 1431
+    }
+  ],
+  "csv_sha256": "cba96bdb990cf8469d6a1cdd1ea46bf90a614915f6e406511da3a3545d7d6b29",
+  "dataset": {
+    "id": "e7a95dc184be58df2913a1cde56943ad5d30b9013977fae845af90ea0a0eff01",
+    "content_sha256": "03a0af9f486f223446d178de83c195af48acf0843edc68193b2d84509b092bcc",
+    "symbol": "EUR/USD",
+    "base_timeframe": "1m",
+    "calendar": "fx-ny-17-v1",
+    "source_kind": "user_upload",
+    "source_label": "Dukascopy EUR/USD BID M1 \u00b7 2024 Jan 2\u20138",
+    "input_timezone": "UTC",
+    "timestamp_unit": "seconds",
+    "volume_type": "unknown",
+    "raw_sha256": "cba96bdb990cf8469d6a1cdd1ea46bf90a614915f6e406511da3a3545d7d6b29",
+    "storage_version": 2,
+    "count": 7170,
+    "start": 1704153600,
+    "end": 1704758400,
+    "stored_timezone": "UTC",
+    "state": "completed",
+    "provenance_verified": false,
+    "created_at": "2026-11-13T05:12:35.530205+00:00",
+    "quality": {
+      "missing_bars": 30,
+      "scheduled_closed_slots": 2880,
+      "missing_intervals": [
+        {
+          "from": 1704238620,
+          "to": 1704238740,
+          "missing_bars": 2
+        },
+        {
+          "from": 1704243180,
+          "to": 1704243240,
+          "missing_bars": 1
+        },
+        {
+          "from": 1704249540,
+          "to": 1704249600,
+          "missing_bars": 1
+        },
+        {
+          "from": 1704264180,
+          "to": 1704264240,
+          "missing_bars": 1
+        },
+        {
+          "from": 1704320340,
+          "to": 1704320400,
+          "missing_bars": 1
+        },
+        {
+          "from": 1704320580,
+          "to": 1704320640,
+          "missing_bars": 1
+        },
+        {
+          "from": 1704340080,
+          "to": 1704340140,
+          "missing_bars": 1
+        },
+        {
+          "from": 1704403560,
+          "to": 1704403620,
+          "missing_bars": 1
+        },
+        {
+          "from": 1704405780,
+          "to": 1704405840,
+          "missing_bars": 1
+        },
+        {
+          "from": 1704409920,
+          "to": 1704409980,
+          "missing_bars": 1
+        },
+        {
+          "from": 1704410880,
+          "to": 1704410940,
+          "missing_bars": 1
+        },
+        {
+          "from": 1704412680,
+          "to": 1704412740,
+          "missing_bars": 1
+        },
+        {
+          "from": 1704428640,
+          "to": 1704428700,
+          "missing_bars": 1
+        },
+        {
+          "from": 1704431040,
+          "to": 1704431100,
+          "missing_bars": 1
+        },
+        {
+          "from": 1704492000,
+          "to": 1704665040,
+          "missing_bars": 4
+        },
+        {
+          "from": 1704667560,
+          "to": 1704667620,
+          "missing_bars": 1
+        },
+        {
+          "from": 1704667800,
+          "to": 1704667860,
+          "missing_bars": 1
+        },
+        {
+          "from": 1704688380,
+          "to": 1704688440,
+          "missing_bars": 1
+        },
+        {
+          "from": 1704691740,
+          "to": 1704691800,
+          "missing_bars": 1
+        },
+        {
+          "from": 1704694740,
+          "to": 1704694800,
+          "missing_bars": 1
+        },
+        {
+          "from": 1704751380,
+          "to": 1704751440,
+          "missing_bars": 1
+        },
+        {
+          "from": 1704751920,
+          "to": 1704752040,
+          "missing_bars": 2
+        },
+        {
+          "from": 1704757380,
+          "to": 1704757500,
+          "missing_bars": 2
+        },
+        {
+          "from": 1704758100,
+          "to": 1704758160,
+          "missing_bars": 1
+        }
+      ],
+      "closure_intervals": [
+        {
+          "from": 1704492000,
+          "to": 1704665040,
+          "closed_slots": 2880
+        }
+      ],
+      "interval_details_limit": 100,
+      "edge_coverage": "Only internal gaps are assessed; no coverage outside first/last rows is assumed."
+    }
+  },
+  "normalization": "Observed minute bars only; no interpolation or gap filling; volume omitted."
+}

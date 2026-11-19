@@ -1,0 +1,139 @@
+{
+  "phase": "P04",
+  "date": "2026-11-11",
+  "entries": [
+    {
+      "local": "backend/vendor/struct/pip_utils.py",
+      "upstream": "Sturct-ai-main/artifacts/trading-api/services/pip_utils.py",
+      "local_sha256": "b66ebc80ccc741dc1aa1b8c2b7cf7a4bc645dec7805e0201a91f19daa4682e00",
+      "upstream_sha256": "b66ebc80ccc741dc1aa1b8c2b7cf7a4bc645dec7805e0201a91f19daa4682e00",
+      "change_since_p01": "unchanged since P01"
+    },
+    {
+      "local": "backend/vendor/struct/zigzag_engine.py",
+      "upstream": "Sturct-ai-main/artifacts/trading-api/services/zigzag_engine.py",
+      "local_sha256": "ea7fc2bd0fb5225d896b7b441f6ded4b5fb772f9a25f9fa52e047ca73fc3a715",
+      "upstream_sha256": "ea7fc2bd0fb5225d896b7b441f6ded4b5fb772f9a25f9fa52e047ca73fc3a715",
+      "change_since_p01": "unchanged since P01"
+    },
+    {
+      "local": "backend/vendor/struct/structure_engine.py",
+      "upstream": "Sturct-ai-main/artifacts/trading-api/services/structure_engine.py",
+      "local_sha256": "e40c27ff01d6fc265b44734b7277e494eb2ac027912237e7acfe0b52a0153755",
+      "upstream_sha256": "e40c27ff01d6fc265b44734b7277e494eb2ac027912237e7acfe0b52a0153755",
+      "change_since_p01": "unchanged since P01"
+    },
+    {
+      "local": "backend/vendor/struct/trend_engine.py",
+      "upstream": "Sturct-ai-main/artifacts/trading-api/services/trend_engine.py",
+      "local_sha256": "bc912bae4364e4d5345fc52085a471ce9f0e210a9c93284cd494b83f72668e27",
+      "upstream_sha256": "bc912bae4364e4d5345fc52085a471ce9f0e210a9c93284cd494b83f72668e27",
+      "change_since_p01": "unchanged since P01"
+    },
+    {
+      "local": "backend/vendor/struct/zones_engine.py",
+      "upstream": "Sturct-ai-main/artifacts/trading-api/services/zones_engine.py",
+      "local_sha256": "fa18e7fc325ba3fe786a079b11c808c473ca0a467d80da181098fd6413eb2adf",
+      "upstream_sha256": "4de2be7a5f5c9dcb15af1669af1793a28db84986e9f33cf682f137897ef7d988",
+      "change_since_p01": "unchanged since P01"
+    },
+    {
+      "local": "backend/vendor/struct/momentum_engine.py",
+      "upstream": "Sturct-ai-main/artifacts/trading-api/services/momentum_engine.py",
+      "local_sha256": "75c38e524cffdd7024f2723a63104a320f0f9420935a087d76ff1069dd7000b6",
+      "upstream_sha256": "75c38e524cffdd7024f2723a63104a320f0f9420935a087d76ff1069dd7000b6",
+      "change_since_p01": "unchanged since P01"
+    },
+    {
+      "local": "backend/vendor/struct/atr_utils.py",
+      "upstream": "Sturct-ai-main/artifacts/trading-api/services/atr_utils.py",
+      "local_sha256": "95af3b85d2982fb8cf82097e4295671b0d1d33215096458b10381e5a4e0396ad",
+      "upstream_sha256": "eba238bb84c13d6d19dcb0746359f809b6e4a32066e505082c5a7cdabf90aa09",
+      "change_since_p01": "Canonical Wilder ATR wrapper replaces rolling mean"
+    },
+    {
+      "local": "backend/vendor/struct/bos_engine.py",
+      "upstream": "Sturct-ai-main/artifacts/trading-api/services/bos_engine.py",
+      "local_sha256": "7743c96e644f0206b73f8993e0d49d3bcd26e755c941baf2daac29f8eb27332e",
+      "upstream_sha256": "12c1f6dce70d15cd5774b74b6142aba589de6bf4557a73e4c5490d3d1fa97447",
+      "change_since_p01": "Accept shared ATR scalar; detector body otherwise retained"
+    },
+    {
+      "local": "backend/vendor/struct/choch_engine.py",
+      "upstream": "Sturct-ai-main/artifacts/trading-api/services/choch_engine.py",
+      "local_sha256": "e6f1122ed41ecaf211f48a1553d9317fd0cdd2853d9625953558723b4ddd5f1c",
+      "upstream_sha256": "e6f1122ed41ecaf211f48a1553d9317fd0cdd2853d9625953558723b4ddd5f1c",
+      "change_since_p01": "unchanged since P01"
+    },
+    {
+      "local": "backend/vendor/fxdesk/indicators.py",
+      "upstream": "FX-Signal-Desk-main/fxbot/indicators.py",
+      "local_sha256": "252f99f082dcac9cef6621a363ff3bdc269835700d2c65d0701e6127e2e440bc",
+      "upstream_sha256": "8b3efcab1d7fa6c54140b03b8442edb4c42aa329c2a3d88e5cdb895e25667bd4",
+      "change_since_p01": "Re-export canonical EMA/ATR/RSI; remove shadowed pivot_idx"
+    },
+    {
+      "local": "backend/vendor/fxdesk/zones.py",
+      "upstream": "FX-Signal-Desk-main/fxbot/zones.py",
+      "local_sha256": "332937ee884fe9c6c8792c6f04369afdb09d54c2a4e637dd6ee0c91f7cc0a33e",
+      "upstream_sha256": "c8acec7ebd4c446db47e42fb7e1ef1a85a00ad7f2212896cbbe1411b4d5dca5a",
+      "change_since_p01": "Inject shared ATR series for FVG/OB"
+    },
+    {
+      "local": "backend/vendor/fxdesk/sessions.py",
+      "upstream": "FX-Signal-Desk-main/fxbot/sessions.py",
+      "local_sha256": "43ff114e1a09982b862a6dbeb19f7ed109189124f8f7a335e850eb854d3cc414",
+      "upstream_sha256": "43ff114e1a09982b862a6dbeb19f7ed109189124f8f7a335e850eb854d3cc414",
+      "change_since_p01": "unchanged since P01"
+    },
+    {
+      "local": "backend/vendor/fxdesk/patterns.py",
+      "upstream": "FX-Signal-Desk-main/fxbot/patterns.py",
+      "local_sha256": "e4f5f0dd48746b92f741eaa8e6531446aead5a083c59419f9c2fa18b70dddd83",
+      "upstream_sha256": "497868aaaa58c12b1917acc6213579d4d9572d63743ff3e83235d62247c19a5d",
+      "change_since_p01": "Inject shared ATR scalar for S/R"
+    },
+    {
+      "local": "backend/vendor/scalper.py",
+      "upstream": "forex-scalper-agent-v2-main/consensus_validator.py",
+      "local_sha256": "a28aa1bf63389253df52b00af6cfa61564e6f3f93d2c034ab5be5f19c34de718",
+      "upstream_sha256": "8e9b79cb0efb1a19fc3094951fffc4dec2c9099a33b39f5e6c1245e3f6a110bc",
+      "change_since_p01": "Inject shared EMA; exact EMA output; equal EMAs neutral and unaligned"
+    },
+    {
+      "local": "backend/vendor/forexdashboard.py",
+      "upstream": "ForexDashboard-main/ForexDashboard.py",
+      "local_sha256": "50d1bc9d01349877da42ed6ffcaba562fabea2a6f1a3245c2c0dcace30422697",
+      "upstream_sha256": "364922a909e46da5a79a967ec582be34b6cb82dfb3f08cb561a22b38e280e5d6",
+      "change_since_p01": "unchanged since P01"
+    },
+    {
+      "local": "frontend/src/components/TradingChart.tsx",
+      "upstream": "Sturct-ai-main/artifacts/trading-dashboard/src/components/TradingChart.tsx",
+      "local_sha256": "d07b05310ed58e40da22c37d4f8ed2fccde5a92f5825020ef7c1b05fd105f33a",
+      "upstream_sha256": "64ff9bb79bcfeeb46492a1c4fa0f4f2d9a5085bac3d6d66eac0422b40c9a62dc",
+      "change_since_p01": "unchanged since P01"
+    },
+    {
+      "local": "frontend/src/components/TopBar.ts",
+      "upstream": "Sturct-ai-main/artifacts/trading-dashboard/src/components/TopBar.tsx",
+      "local_sha256": "208fdbbdde61d87249a4061261ba2d5d81f5e7d1535aafa2008dd123f1b22aa5",
+      "upstream_sha256": "3fc3e3f53936f57d9249f4cc4af08889cacb669f24955494504c25d237eb0591",
+      "change_since_p01": "unchanged since P01"
+    },
+    {
+      "local": "frontend/src/hooks/use-trading-api.ts",
+      "upstream": "Sturct-ai-main/artifacts/trading-dashboard/src/hooks/use-trading-api.ts",
+      "local_sha256": "0de78df4647cea818c788a0aadb9ff8310f99ddac7096b08a96b01b09ea5e9e6",
+      "upstream_sha256": "e12c796737a73221acd6a72fe384751e7792175142e55a4375f26bd5411f5663",
+      "change_since_p01": "unchanged since P01"
+    },
+    {
+      "local": "backend/adapters.py",
+      "upstream": "forex-scalper-agent-v2-main/analysis/regime_detector.py",
+      "local_sha256": "b220ddbd46976316212394bdda00f2a4d2a43c1c63e6b46ab879e247fc583843",
+      "upstream_sha256": "cadfd202b75806889df47a73cbeebed33f9bf0b5292615a1d26bcc67520fc4d7",
+      "change_since_p01": "Adapt only ATR volatility branch (1.5/0.6 thresholds); canonical ATR; no ADX/ML/confidence"
+    }
+  ]
+}

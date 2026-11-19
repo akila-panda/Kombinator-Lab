@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-18",
+  "runtime": {
+    "python": "3.14.3",
+    "platform": "macOS-15.7.9-x86_64-i386-64bit-Mach-O",
+    "machine": "x86_64"
+  },
+  "data": {
+    "sha256": "cba96bdb990cf8469d6a1cdd1ea46bf90a614915f6e406511da3a3545d7d6b29",
+    "rows": 7170,
+    "start": 1704153600,
+    "end": 1704758400
+  },
+  "checks": [
+    "real-history deterministic replay",
+    "evidence availability",
+    "closed market",
+    "end of data",
+    "out-of-range rejection",
+    "partial/full closes",
+    "fresh-store restore",
+    "immutable branch parent",
+    "read-only review"
+  ],
+  "performance": {
+    "measurement": "direct replay_state wall time; one process; not HTTP or browser latency",
+    "samples_ms": [
+      605.0490969792008,
+      187.5224470277317,
+      224.58340495359153,
+      194.65438195038587,
+      188.3215990383178,
+      191.02062500314787,
+      227.35550702782348,
+      200.36321005318314,
+      207.592079997994,
+      197.39104999462143,
+      218.14477897714823,
+      193.9005340100266
+    ],
+    "cold_ms": 605.0490969792008,
+    "median_ms": 198.87713002390228,
+    "max_ms": 605.0490969792008
+  },
+  "account": {
+    "balance": "9997.02",
+    "realized_pnl": "-2.28",
+    "commission_paid": "0.70",
+    "unrealized_pnl": "0.00",
+    "equity": "9997.02",
+    "used_margin": "0.00",
+    "free_margin": "9997.02"
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "phase": "P11",
+  "scenario": "Real P10 EUR/USD minute data; market buy/sell and cancelled limit",
+  "repeatability": "passed",
+  "submission_clock_has_no_fill": "passed",
+  "result": {
+    "version": "p11-orders-v1",
+    "symbol": "EUR/USD",
+    "start": 1704456420,
+    "clock": 1704456720,
+    "quote_model": {
+      "input": "bid",
+      "buy": "bid plus fixed simulated spread",
+      "sell": "bid",
+      "spread_price": "0.00010",
+      "rounding": "nearest tick; half up"
+    },
+    "position_model": "independent entry lots; no netting, exits or account balance",
+    "orders": [
+      {
+        "id": "buy",
+        "side": "buy",
+        "kind": "market",
+        "units": 1000,
+        "price": null,
+        "submitted_at": 1704456420,
+        "status": "filled",
+        "filled_at": 1704456480,
+        "fill_price": "1.09188"
+      },
+      {
+        "id": "sell",
+        "side": "sell",
+        "kind": "market",
+        "units": 1000,
+        "price": null,
+        "submitted_at": 1704456420,
+        "status": "filled",
+        "filled_at": 1704456480,
+        "fill_price": "1.09178"
+      },
+      {
+        "id": "limit",
+        "side": "buy",
+        "kind": "limit",
+        "units": 1000,
+        "price": "0.50000",
+        "submitted_at": 1704456420,
+        "status": "cancelled"
+      }
+    ],
+    "positions": [
+      {
+        "id": "position-buy",
+        "order_id": "buy",
+        "symbol": "EUR/USD",
+        "side": "buy",
+        "units": 1000,
+        "entry_price": "1.09188",
+        "opened_at": 1704456480,
+        "bar_open_time": 1704456420,
+        "status": "open"
+      },
+      {
+        "id": "position-sell",
+        "order_id": "sell",
+        "symbol": "EUR/USD",
+        "side": "sell",
+        "units": 1000,
+        "entry_price": "1.09178",
+        "opened_at": 1704456480,
+        "bar_open_time": 1704456420,
+        "status": "open"
+      }
+    ],
+    "events": [
+      {
+        "sequence": 1,
+        "type": "submitted",
+        "time": 1704456420,
+        "order_id": "buy",
+        "command_id": "buy"
+      },
+      {
+        "sequence": 2,
+        "type": "accepted",
+        "time": 1704456420,
+        "order_id": "buy",
+        "command_id": "buy",
+        "price": null
+      },
+      {
+        "sequence": 3,
+        "type": "submitted",
+        "time": 1704456420,
+        "order_id": "sell",
+        "command_id": "sell"
+      },
+      {
+        "sequence": 4,
+        "type": "accepted",
+        "time": 1704456420,
+        "order_id": "sell",
+        "command_id": "sell",
+        "price": null
+      },
+      {
+        "sequence": 5,
+        "type": "submitted",
+        "time": 1704456420,
+        "order_id": "limit",
+        "command_id": "limit"
+      },
+      {
+        "sequence": 6,
+        "type": "accepted",
+        "time": 1704456420,
+        "order_id": "limit",
+        "command_id": "limit",
+        "price": "0.50000"
+      },
+      {
+        "sequence": 7,
+        "type": "filled",
+        "time": 1704456480,
+        "order_id": "buy",
+        "position_id": "position-buy",
+        "price": "1.09188",
+        "units": 1000,
+        "bar_open_time": 1704456420,
+        "price_basis": "open",
+        "intrabar_time_unknown": false
+      },
+      {
+        "sequence": 8,
+        "type": "filled",
+        "time": 1704456480,
+        "order_id": "sell",
+        "position_id": "position-sell",
+        "price": "1.09178",
+        "units": 1000,
+        "bar_open_time": 1704456420,
+        "price_basis": "open",
+        "intrabar_time_unknown": false
+      },
+      {
+        "sequence": 9,
+        "type": "cancelled",
+        "time": 1704456480,
+        "order_id": "limit",
+        "command_id": "cancel"
+      }
+    ],
+    "dataset_id": "e7a95dc184be58df2913a1cde56943ad5d30b9013977fae845af90ea0a0eff01",
+    "ended": false,
+    "source_label": "Dukascopy EUR/USD BID M1 \u00b7 2024 Jan 2\u20138",
+    "input_price_basis_verified": false,
+    "notice": "Paper simulation only. Fixed spread is synthetic; no liquidity, fees, margin or tick-path model. Pending orders remain pending at data end."
+  }
+}

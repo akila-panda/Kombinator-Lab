@@ -1,0 +1,1083 @@
+{
+  "$defs": {
+    "Assessment": {
+      "additionalProperties": false,
+      "properties": {
+        "module": {
+          "enum": [
+            "struct",
+            "fxdesk",
+            "scalper",
+            "forexdashboard",
+            "integration"
+          ],
+          "title": "Module",
+          "type": "string"
+        },
+        "kind": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Kind",
+          "type": "string"
+        },
+        "source_version": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Source Version",
+          "type": "string"
+        },
+        "calculation_version": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Calculation Version",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "available",
+            "unavailable",
+            "insufficient_history"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "direction": {
+          "anyOf": [
+            {
+              "enum": [
+                "bullish",
+                "bearish",
+                "neutral",
+                "mixed"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Direction"
+        },
+        "metrics": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Metrics",
+          "type": "object"
+        },
+        "evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "pattern": ".*\\S.*",
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "explanation": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Explanation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "module",
+        "kind",
+        "source_version",
+        "calculation_version",
+        "status",
+        "explanation"
+      ],
+      "title": "Assessment",
+      "type": "object"
+    },
+    "CanonicalCandle": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Id",
+          "type": "string"
+        },
+        "symbol": {
+          "enum": [
+            "EUR/USD",
+            "GBP/USD",
+            "USD/JPY"
+          ],
+          "title": "Symbol",
+          "type": "string"
+        },
+        "timeframe": {
+          "enum": [
+            "1m",
+            "5m",
+            "15m",
+            "1h",
+            "4h",
+            "d1",
+            "w1"
+          ],
+          "title": "Timeframe",
+          "type": "string"
+        },
+        "calendar": {
+          "default": "fixed-utc-v1",
+          "enum": [
+            "fixed-utc-v1",
+            "utc-weekdays-v1",
+            "fx-ny-17-v1"
+          ],
+          "title": "Calendar",
+          "type": "string"
+        },
+        "source_id": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "open_time": {
+          "maximum": 4102444800,
+          "minimum": 0,
+          "title": "Open Time",
+          "type": "integer"
+        },
+        "close_time": {
+          "maximum": 4102444800,
+          "minimum": 0,
+          "title": "Close Time",
+          "type": "integer"
+        },
+        "observed_at": {
+          "maximum": 4102444800,
+          "minimum": 0,
+          "title": "Observed At",
+          "type": "integer"
+        },
+        "state": {
+          "enum": [
+            "completed",
+            "forming"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "open": {
+          "exclusiveMinimum": 0,
+          "title": "Open",
+          "type": "number"
+        },
+        "high": {
+          "exclusiveMinimum": 0,
+          "title": "High",
+          "type": "number"
+        },
+        "low": {
+          "exclusiveMinimum": 0,
+          "title": "Low",
+          "type": "number"
+        },
+        "close": {
+          "exclusiveMinimum": 0,
+          "title": "Close",
+          "type": "number"
+        },
+        "volume": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Volume"
+        },
+        "volume_type": {
+          "default": "unknown",
+          "enum": [
+            "tick_count",
+            "base_units",
+            "quote_units",
+            "unknown"
+          ],
+          "title": "Volume Type",
+          "type": "string"
+        },
+        "quality_flags": {
+          "items": {
+            "enum": [
+              "synthetic",
+              "unverified_source",
+              "gap_before_unclassified",
+              "missing_scheduled_bars_before",
+              "scheduled_closure_before",
+              "volume_unknown"
+            ],
+            "type": "string"
+          },
+          "title": "Quality Flags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "symbol",
+        "timeframe",
+        "source_id",
+        "open_time",
+        "close_time",
+        "observed_at",
+        "state",
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "title": "CanonicalCandle",
+      "type": "object"
+    },
+    "ChartPoint": {
+      "additionalProperties": false,
+      "properties": {
+        "time": {
+          "maximum": 4102444800,
+          "minimum": 0,
+          "title": "Time",
+          "type": "integer"
+        },
+        "price": {
+          "minimum": 0,
+          "title": "Price",
+          "type": "number"
+        }
+      },
+      "required": [
+        "time",
+        "price"
+      ],
+      "title": "ChartPoint",
+      "type": "object"
+    },
+    "DataSource": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "synthetic",
+            "user_upload",
+            "provider",
+            "unknown"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "description": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Description",
+          "type": "string"
+        },
+        "volume_type": {
+          "default": "unknown",
+          "enum": [
+            "tick_count",
+            "base_units",
+            "quote_units",
+            "unknown"
+          ],
+          "title": "Volume Type",
+          "type": "string"
+        },
+        "provenance_verified": {
+          "default": false,
+          "title": "Provenance Verified",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "description"
+      ],
+      "title": "DataSource",
+      "type": "object"
+    },
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Id",
+          "type": "string"
+        },
+        "symbol": {
+          "enum": [
+            "EUR/USD",
+            "GBP/USD",
+            "USD/JPY"
+          ],
+          "title": "Symbol",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "candle",
+            "observation",
+            "calculation"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "source_id": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Source Id",
+          "type": "string"
+        },
+        "occurred_at": {
+          "maximum": 4102444800,
+          "minimum": 0,
+          "title": "Occurred At",
+          "type": "integer"
+        },
+        "available_at": {
+          "maximum": 4102444800,
+          "minimum": 0,
+          "title": "Available At",
+          "type": "integer"
+        },
+        "candle_id": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "pattern": ".*\\S.*",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Candle Id"
+        },
+        "explanation": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Explanation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "symbol",
+        "kind",
+        "source_id",
+        "occurred_at",
+        "available_at",
+        "explanation"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "Finding": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Id",
+          "type": "string"
+        },
+        "snapshot_id": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Snapshot Id",
+          "type": "string"
+        },
+        "symbol": {
+          "enum": [
+            "EUR/USD",
+            "GBP/USD",
+            "USD/JPY"
+          ],
+          "title": "Symbol",
+          "type": "string"
+        },
+        "timeframe": {
+          "enum": [
+            "1m",
+            "5m",
+            "15m",
+            "1h",
+            "4h",
+            "d1",
+            "w1"
+          ],
+          "title": "Timeframe",
+          "type": "string"
+        },
+        "module": {
+          "enum": [
+            "struct",
+            "fxdesk",
+            "scalper",
+            "forexdashboard",
+            "integration"
+          ],
+          "title": "Module",
+          "type": "string"
+        },
+        "source_version": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Source Version",
+          "type": "string"
+        },
+        "calculation_version": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Calculation Version",
+          "type": "string"
+        },
+        "kind": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Kind",
+          "type": "string"
+        },
+        "title": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Title",
+          "type": "string"
+        },
+        "direction": {
+          "anyOf": [
+            {
+              "enum": [
+                "bullish",
+                "bearish",
+                "neutral",
+                "mixed"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Direction"
+        },
+        "prices": {
+          "items": {
+            "exclusiveMinimum": 0,
+            "type": "number"
+          },
+          "minItems": 1,
+          "title": "Prices",
+          "type": "array"
+        },
+        "occurred_at": {
+          "maximum": 4102444800,
+          "minimum": 0,
+          "title": "Occurred At",
+          "type": "integer"
+        },
+        "confirmed_at": {
+          "anyOf": [
+            {
+              "maximum": 4102444800,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confirmed At"
+        },
+        "invalidated_at": {
+          "anyOf": [
+            {
+              "maximum": 4102444800,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Invalidated At"
+        },
+        "expired_at": {
+          "anyOf": [
+            {
+              "maximum": 4102444800,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expired At"
+        },
+        "status": {
+          "enum": [
+            "provisional",
+            "confirmed",
+            "invalidated",
+            "expired"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "pattern": ".*\\S.*",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "explanation": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Explanation",
+          "type": "string"
+        },
+        "invalidation_condition": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Invalidation Condition",
+          "type": "string"
+        },
+        "timing_note": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Timing Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "snapshot_id",
+        "symbol",
+        "timeframe",
+        "module",
+        "source_version",
+        "calculation_version",
+        "kind",
+        "title",
+        "prices",
+        "occurred_at",
+        "status",
+        "evidence_ids",
+        "explanation",
+        "invalidation_condition",
+        "timing_note"
+      ],
+      "title": "Finding",
+      "type": "object"
+    },
+    "Instrument": {
+      "additionalProperties": false,
+      "properties": {
+        "symbol": {
+          "enum": [
+            "EUR/USD",
+            "GBP/USD",
+            "USD/JPY"
+          ],
+          "title": "Symbol",
+          "type": "string"
+        },
+        "base_currency": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Base Currency",
+          "type": "string"
+        },
+        "quote_currency": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Quote Currency",
+          "type": "string"
+        },
+        "pip_size": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "title": "Pip Size"
+        },
+        "tick_size": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "title": "Tick Size"
+        },
+        "price_precision": {
+          "maximum": 10,
+          "minimum": 0,
+          "title": "Price Precision",
+          "type": "integer"
+        },
+        "unit": {
+          "const": "base_currency_units",
+          "default": "base_currency_units",
+          "title": "Unit",
+          "type": "string"
+        },
+        "metadata_source": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Metadata Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "symbol",
+        "base_currency",
+        "quote_currency",
+        "pip_size",
+        "tick_size",
+        "price_precision",
+        "metadata_source"
+      ],
+      "title": "Instrument",
+      "type": "object"
+    },
+    "MarketSnapshot": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Id",
+          "type": "string"
+        },
+        "symbol": {
+          "enum": [
+            "EUR/USD",
+            "GBP/USD",
+            "USD/JPY"
+          ],
+          "title": "Symbol",
+          "type": "string"
+        },
+        "timeframe": {
+          "enum": [
+            "1m",
+            "5m",
+            "15m",
+            "1h",
+            "4h",
+            "d1",
+            "w1"
+          ],
+          "title": "Timeframe",
+          "type": "string"
+        },
+        "base_timeframe": {
+          "enum": [
+            "1m",
+            "5m",
+            "15m",
+            "1h",
+            "4h",
+            "d1",
+            "w1"
+          ],
+          "title": "Base Timeframe",
+          "type": "string"
+        },
+        "as_of": {
+          "maximum": 4102444800,
+          "minimum": 0,
+          "title": "As Of",
+          "type": "integer"
+        },
+        "input_start": {
+          "maximum": 4102444800,
+          "minimum": 0,
+          "title": "Input Start",
+          "type": "integer"
+        },
+        "input_end": {
+          "maximum": 4102444800,
+          "minimum": 0,
+          "title": "Input End",
+          "type": "integer"
+        },
+        "input_count": {
+          "exclusiveMinimum": 0,
+          "title": "Input Count",
+          "type": "integer"
+        },
+        "source": {
+          "$ref": "#/$defs/DataSource"
+        },
+        "calendar": {
+          "default": "fixed-utc-v1",
+          "enum": [
+            "fixed-utc-v1",
+            "utc-weekdays-v1",
+            "fx-ny-17-v1"
+          ],
+          "title": "Calendar",
+          "type": "string"
+        },
+        "quality_flags": {
+          "items": {
+            "minLength": 1,
+            "pattern": ".*\\S.*",
+            "type": "string"
+          },
+          "title": "Quality Flags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "symbol",
+        "timeframe",
+        "base_timeframe",
+        "as_of",
+        "input_start",
+        "input_end",
+        "input_count",
+        "source"
+      ],
+      "title": "MarketSnapshot",
+      "type": "object"
+    },
+    "Overlay": {
+      "additionalProperties": false,
+      "properties": {
+        "pane": {
+          "default": "price",
+          "enum": [
+            "price",
+            "rsi"
+          ],
+          "title": "Pane",
+          "type": "string"
+        },
+        "id": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Id",
+          "type": "string"
+        },
+        "finding_id": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Finding Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "marker",
+            "level",
+            "line",
+            "zone"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "points": {
+          "items": {
+            "$ref": "#/$defs/ChartPoint"
+          },
+          "title": "Points",
+          "type": "array"
+        },
+        "zone": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ZoneGeometry"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "id",
+        "finding_id",
+        "kind"
+      ],
+      "title": "Overlay",
+      "type": "object"
+    },
+    "SentimentObservation": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "position_book",
+            "order_book"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "available",
+            "unavailable",
+            "insufficient_history"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/DataSource"
+        },
+        "observed_at": {
+          "anyOf": [
+            {
+              "maximum": 4102444800,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Observed At"
+        },
+        "retrieved_at": {
+          "anyOf": [
+            {
+              "maximum": 4102444800,
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Retrieved At"
+        },
+        "availability_basis": {
+          "default": "observation_time_only",
+          "enum": [
+            "observation_time_only",
+            "retrieval_time"
+          ],
+          "title": "Availability Basis",
+          "type": "string"
+        },
+        "score": {
+          "anyOf": [
+            {
+              "maximum": 1,
+              "minimum": -1,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Score"
+        },
+        "evidence_ids": {
+          "items": {
+            "minLength": 1,
+            "pattern": ".*\\S.*",
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "reason": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "status",
+        "source",
+        "reason"
+      ],
+      "title": "SentimentObservation",
+      "type": "object"
+    },
+    "SentimentResult": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "available",
+            "unavailable",
+            "insufficient_history"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "observations": {
+          "items": {
+            "$ref": "#/$defs/SentimentObservation"
+          },
+          "title": "Observations",
+          "type": "array"
+        },
+        "reason": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "reason"
+      ],
+      "title": "SentimentResult",
+      "type": "object"
+    },
+    "ZoneGeometry": {
+      "additionalProperties": false,
+      "properties": {
+        "start_time": {
+          "maximum": 4102444800,
+          "minimum": 0,
+          "title": "Start Time",
+          "type": "integer"
+        },
+        "end_time": {
+          "maximum": 4102444800,
+          "minimum": 0,
+          "title": "End Time",
+          "type": "integer"
+        },
+        "top": {
+          "exclusiveMinimum": 0,
+          "title": "Top",
+          "type": "number"
+        },
+        "bottom": {
+          "exclusiveMinimum": 0,
+          "title": "Bottom",
+          "type": "number"
+        }
+      },
+      "required": [
+        "start_time",
+        "end_time",
+        "top",
+        "bottom"
+      ],
+      "title": "ZoneGeometry",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "retrospective_findings_only": {
+      "const": true,
+      "default": true,
+      "title": "Retrospective Findings Only",
+      "type": "boolean"
+    },
+    "schema_version": {
+      "const": "1.4.0",
+      "default": "1.4.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "instrument": {
+      "$ref": "#/$defs/Instrument"
+    },
+    "snapshot": {
+      "$ref": "#/$defs/MarketSnapshot"
+    },
+    "candles": {
+      "items": {
+        "$ref": "#/$defs/CanonicalCandle"
+      },
+      "minItems": 1,
+      "title": "Candles",
+      "type": "array"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/Evidence"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "findings": {
+      "items": {
+        "$ref": "#/$defs/Finding"
+      },
+      "title": "Findings",
+      "type": "array"
+    },
+    "overlays": {
+      "items": {
+        "$ref": "#/$defs/Overlay"
+      },
+      "title": "Overlays",
+      "type": "array"
+    },
+    "assessments": {
+      "items": {
+        "$ref": "#/$defs/Assessment"
+      },
+      "title": "Assessments",
+      "type": "array"
+    },
+    "sentiment": {
+      "$ref": "#/$defs/SentimentResult"
+    }
+  },
+  "required": [
+    "instrument",
+    "snapshot",
+    "candles",
+    "sentiment"
+  ],
+  "title": "AnalysisEnvelope",
+  "type": "object"
+}

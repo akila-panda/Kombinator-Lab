@@ -1,0 +1,227 @@
+{
+  "phase": "P01",
+  "date": "2026-11-10",
+  "entries": [
+    {
+      "local": "backend/vendor/struct/pip_utils.py",
+      "upstream": "Sturct-ai-main/artifacts/trading-api/services/pip_utils.py",
+      "mode": "copied",
+      "local_sha256": "b66ebc80ccc741dc1aa1b8c2b7cf7a4bc645dec7805e0201a91f19daa4682e00",
+      "upstream_sha256": "b66ebc80ccc741dc1aa1b8c2b7cf7a4bc645dec7805e0201a91f19daa4682e00",
+      "definitions": [
+        "_normalise_symbol",
+        "pip_size",
+        "asset_class"
+      ]
+    },
+    {
+      "local": "backend/vendor/struct/zigzag_engine.py",
+      "upstream": "Sturct-ai-main/artifacts/trading-api/services/zigzag_engine.py",
+      "mode": "copied",
+      "local_sha256": "ea7fc2bd0fb5225d896b7b441f6ded4b5fb772f9a25f9fa52e047ca73fc3a715",
+      "upstream_sha256": "ea7fc2bd0fb5225d896b7b441f6ded4b5fb772f9a25f9fa52e047ca73fc3a715",
+      "definitions": [
+        "SwingPoint",
+        "detect_swings",
+        "swings_to_zigzag_lines"
+      ]
+    },
+    {
+      "local": "backend/vendor/struct/structure_engine.py",
+      "upstream": "Sturct-ai-main/artifacts/trading-api/services/structure_engine.py",
+      "mode": "copied",
+      "local_sha256": "e40c27ff01d6fc265b44734b7277e494eb2ac027912237e7acfe0b52a0153755",
+      "upstream_sha256": "e40c27ff01d6fc265b44734b7277e494eb2ac027912237e7acfe0b52a0153755",
+      "definitions": [
+        "classify_structure"
+      ]
+    },
+    {
+      "local": "backend/vendor/struct/trend_engine.py",
+      "upstream": "Sturct-ai-main/artifacts/trading-api/services/trend_engine.py",
+      "mode": "copied",
+      "local_sha256": "bc912bae4364e4d5345fc52085a471ce9f0e210a9c93284cd494b83f72668e27",
+      "upstream_sha256": "bc912bae4364e4d5345fc52085a471ce9f0e210a9c93284cd494b83f72668e27",
+      "definitions": [
+        "detect_trend"
+      ]
+    },
+    {
+      "local": "backend/vendor/struct/zones_engine.py",
+      "upstream": "Sturct-ai-main/artifacts/trading-api/services/zones_engine.py",
+      "mode": "signature repair",
+      "local_sha256": "fa18e7fc325ba3fe786a079b11c808c473ca0a467d80da181098fd6413eb2adf",
+      "upstream_sha256": "4de2be7a5f5c9dcb15af1669af1793a28db84986e9f33cf682f137897ef7d988",
+      "definitions": [
+        "_cluster_pips",
+        "_zone_width_pips",
+        "_df_time_ints",
+        "detect_zones",
+        "_derive_bounds",
+        "_compute_freshness",
+        "_compute_departure",
+        "_compute_quality"
+      ]
+    },
+    {
+      "local": "backend/vendor/struct/momentum_engine.py",
+      "upstream": "Sturct-ai-main/artifacts/trading-api/services/momentum_engine.py",
+      "mode": "copied",
+      "local_sha256": "75c38e524cffdd7024f2723a63104a320f0f9420935a087d76ff1069dd7000b6",
+      "upstream_sha256": "75c38e524cffdd7024f2723a63104a320f0f9420935a087d76ff1069dd7000b6",
+      "definitions": [
+        "compute_momentum"
+      ]
+    },
+    {
+      "local": "backend/vendor/struct/atr_utils.py",
+      "upstream": "Sturct-ai-main/artifacts/trading-api/services/atr_utils.py",
+      "mode": "copied",
+      "local_sha256": "eba238bb84c13d6d19dcb0746359f809b6e4a32066e505082c5a7cdabf90aa09",
+      "upstream_sha256": "eba238bb84c13d6d19dcb0746359f809b6e4a32066e505082c5a7cdabf90aa09",
+      "definitions": [
+        "compute_atr14"
+      ]
+    },
+    {
+      "local": "backend/vendor/struct/bos_engine.py",
+      "upstream": "Sturct-ai-main/artifacts/trading-api/services/bos_engine.py",
+      "mode": "copied",
+      "local_sha256": "12c1f6dce70d15cd5774b74b6142aba589de6bf4557a73e4c5490d3d1fa97447",
+      "upstream_sha256": "12c1f6dce70d15cd5774b74b6142aba589de6bf4557a73e4c5490d3d1fa97447",
+      "definitions": [
+        "detect_bos"
+      ]
+    },
+    {
+      "local": "backend/vendor/struct/choch_engine.py",
+      "upstream": "Sturct-ai-main/artifacts/trading-api/services/choch_engine.py",
+      "mode": "copied",
+      "local_sha256": "e6f1122ed41ecaf211f48a1553d9317fd0cdd2853d9625953558723b4ddd5f1c",
+      "upstream_sha256": "e6f1122ed41ecaf211f48a1553d9317fd0cdd2853d9625953558723b4ddd5f1c",
+      "definitions": [
+        "detect_choch"
+      ]
+    },
+    {
+      "local": "backend/vendor/fxdesk/indicators.py",
+      "upstream": "FX-Signal-Desk-main/fxbot/indicators.py",
+      "mode": "RSI replacement",
+      "local_sha256": "78713dad49ac463f57fbf10140089cc194a2ab71bb978956346bde8fc0954025",
+      "upstream_sha256": "8b3efcab1d7fa6c54140b03b8442edb4c42aa329c2a3d88e5cdb895e25667bd4",
+      "definitions": [
+        "ema",
+        "atr",
+        "swing_points",
+        "pivot_idx",
+        "sma",
+        "pivot_idx",
+        "rsi",
+        "bollinger",
+        "stochastic",
+        "heikin_ashi",
+        "donchian"
+      ]
+    },
+    {
+      "local": "backend/vendor/fxdesk/zones.py",
+      "upstream": "FX-Signal-Desk-main/fxbot/zones.py",
+      "mode": "copied",
+      "local_sha256": "c8acec7ebd4c446db47e42fb7e1ef1a85a00ad7f2212896cbbe1411b4d5dca5a",
+      "upstream_sha256": "c8acec7ebd4c446db47e42fb7e1ef1a85a00ad7f2212896cbbe1411b4d5dca5a",
+      "definitions": [
+        "_iso",
+        "find_fvgs",
+        "find_obs",
+        "dealing_range",
+        "open_levels",
+        "sma_values",
+        "sma_series"
+      ]
+    },
+    {
+      "local": "backend/vendor/fxdesk/sessions.py",
+      "upstream": "FX-Signal-Desk-main/fxbot/sessions.py",
+      "mode": "copied",
+      "local_sha256": "43ff114e1a09982b862a6dbeb19f7ed109189124f8f7a335e850eb854d3cc414",
+      "upstream_sha256": "43ff114e1a09982b862a6dbeb19f7ed109189124f8f7a335e850eb854d3cc414",
+      "definitions": [
+        "_hours",
+        "window_mask",
+        "killzone_mask",
+        "session_labels",
+        "day_key",
+        "day_levels",
+        "silver_bullet_now"
+      ]
+    },
+    {
+      "local": "backend/vendor/fxdesk/patterns.py",
+      "upstream": "FX-Signal-Desk-main/fxbot/patterns.py",
+      "mode": "copied",
+      "local_sha256": "497868aaaa58c12b1917acc6213579d4d9572d63743ff3e83235d62247c19a5d",
+      "upstream_sha256": "497868aaaa58c12b1917acc6213579d4d9572d63743ff3e83235d62247c19a5d",
+      "definitions": [
+        "_iso",
+        "_views",
+        "_line",
+        "_triple_top",
+        "_wedge",
+        "_flag",
+        "_rectangle",
+        "_channel",
+        "more_candles",
+        "sr_levels",
+        "more_patterns"
+      ]
+    },
+    {
+      "local": "backend/vendor/scalper.py",
+      "upstream": "forex-scalper-agent-v2-main/consensus_validator.py",
+      "mode": "method extraction",
+      "local_sha256": "6560de6369a25684c78f9cdd91829f57d7e8a1bf5865878da76078774afe6dac",
+      "upstream_sha256": "8e9b79cb0efb1a19fc3094951fffc4dec2c9099a33b39f5e6c1245e3f6a110bc",
+      "definitions": [
+        "TechnicalAlignment"
+      ]
+    },
+    {
+      "local": "backend/vendor/forexdashboard.py",
+      "upstream": "ForexDashboard-main/ForexDashboard.py",
+      "mode": "function/method extraction",
+      "local_sha256": "50d1bc9d01349877da42ed6ffcaba562fabea2a6f1a3245c2c0dcace30422697",
+      "upstream_sha256": "364922a909e46da5a79a967ec582be34b6cb82dfb3f08cb561a22b38e280e5d6",
+      "definitions": [
+        "calculate_pivot_points",
+        "SnapshotStrategy"
+      ]
+    },
+    {
+      "local": "frontend/src/components/TradingChart.tsx",
+      "upstream": "Sturct-ai-main/artifacts/trading-dashboard/src/components/TradingChart.tsx",
+      "mode": "EMA integration and selected-price label",
+      "local_sha256": "d07b05310ed58e40da22c37d4f8ed2fccde5a92f5825020ef7c1b05fd105f33a",
+      "upstream_sha256": "64ff9bb79bcfeeb46492a1c4fa0f4f2d9a5085bac3d6d66eac0422b40c9a62dc"
+    },
+    {
+      "local": "frontend/src/components/TopBar.ts",
+      "upstream": "Sturct-ai-main/artifacts/trading-dashboard/src/components/TopBar.tsx",
+      "mode": "type extraction",
+      "local_sha256": "208fdbbdde61d87249a4061261ba2d5d81f5e7d1535aafa2008dd123f1b22aa5",
+      "upstream_sha256": "3fc3e3f53936f57d9249f4cc4af08889cacb669f24955494504c25d237eb0591"
+    },
+    {
+      "local": "frontend/src/hooks/use-trading-api.ts",
+      "upstream": "Sturct-ai-main/artifacts/trading-dashboard/src/hooks/use-trading-api.ts",
+      "mode": "type extraction",
+      "local_sha256": "0de78df4647cea818c788a0aadb9ff8310f99ddac7096b08a96b01b09ea5e9e6",
+      "upstream_sha256": "e12c796737a73221acd6a72fe384751e7792175142e55a4375f26bd5411f5663"
+    }
+  ],
+  "extracted_bodies_verified_unchanged": [
+    "check_h1_alignment",
+    "calculate_pivot_points",
+    "analyze_orderbook",
+    "analyze_positionbook"
+  ]
+}

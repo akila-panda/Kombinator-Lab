@@ -1,0 +1,32 @@
+[
+  {
+    "symbol": "EUR/USD",
+    "base_currency": "EUR",
+    "quote_currency": "USD",
+    "pip_size": "0.0001",
+    "tick_size": "0.00001",
+    "price_precision": 5,
+    "unit": "base_currency_units",
+    "metadata_source": "local FX defaults; not verified broker specifications"
+  },
+  {
+    "symbol": "GBP/USD",
+    "base_currency": "GBP",
+    "quote_currency": "USD",
+    "pip_size": "0.0001",
+    "tick_size": "0.00001",
+    "price_precision": 5,
+    "unit": "base_currency_units",
+    "metadata_source": "local FX defaults; not verified broker specifications"
+  },
+  {
+    "symbol": "USD/JPY",
+    "base_currency": "USD",
+    "quote_currency": "JPY",
+    "pip_size": "0.01",
+    "tick_size": "0.001",
+    "price_precision": 3,
+    "unit": "base_currency_units",
+    "metadata_source": "local FX defaults; not verified broker specifications"
+  }
+]

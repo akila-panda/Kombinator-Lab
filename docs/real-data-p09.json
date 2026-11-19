@@ -1,0 +1,582 @@
+{
+  "phase": "P09",
+  "source": "Dukascopy current public historical endpoint",
+  "price_side": "bid",
+  "granularity": "1h",
+  "raw_sources": [
+    {
+      "url": "https://jetta.dukascopy.com/v1/candles/hour/EUR-USD/BID/2024/1",
+      "sha256": "d9178c092a8006d618e2f52aa307bcb16b4005f07b5938cf445ce902917fe030",
+      "bytes": 13154,
+      "observed_rows": 530
+    },
+    {
+      "url": "https://jetta.dukascopy.com/v1/candles/hour/EUR-USD/BID/2024/2",
+      "sha256": "5b9ad6350cbe8fe965e463ffc0a1a4b7abb7293e942f2e5fea46fbe9c19680fd",
+      "bytes": 12156,
+      "observed_rows": 504
+    },
+    {
+      "url": "https://jetta.dukascopy.com/v1/candles/hour/EUR-USD/BID/2024/3",
+      "sha256": "02ba8d9579555f6ac9523db1506f1c409ad010658d9cdc5095e4aa0b91096d58",
+      "bytes": 12067,
+      "observed_rows": 505
+    }
+  ],
+  "csv_sha256": "77a2d8a67c1d165a3eec7cf33e4d7ec71e8a1fa95f63d8bb494a7897cf00431e",
+  "dataset": {
+    "id": "83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8",
+    "content_sha256": "f1c0d7f26bb0c26de103b916ab0190339df5c1f59c955e36d92a01b0f9e77804",
+    "symbol": "EUR/USD",
+    "base_timeframe": "1h",
+    "calendar": "fx-ny-17-v1",
+    "source_kind": "user_upload",
+    "source_label": "Dukascopy EUR/USD BID H1 \u00b7 2024 Q1 \u00b7 observed bars",
+    "input_timezone": "UTC",
+    "timestamp_unit": "seconds",
+    "volume_type": "unknown",
+    "raw_sha256": "77a2d8a67c1d165a3eec7cf33e4d7ec71e8a1fa95f63d8bb494a7897cf00431e",
+    "storage_version": 2,
+    "count": 1539,
+    "start": 1704146400,
+    "end": 1711929600,
+    "stored_timezone": "UTC",
+    "state": "completed",
+    "provenance_verified": false,
+    "created_at": "2026-11-13T04:52:05.949571+00:00",
+    "quality": {
+      "missing_bars": 0,
+      "scheduled_closed_slots": 623,
+      "missing_intervals": [],
+      "closure_intervals": [
+        {
+          "from": 1704492000,
+          "to": 1704664800,
+          "closed_slots": 48
+        },
+        {
+          "from": 1705096800,
+          "to": 1705269600,
+          "closed_slots": 48
+        },
+        {
+          "from": 1705701600,
+          "to": 1705874400,
+          "closed_slots": 48
+        },
+        {
+          "from": 1706306400,
+          "to": 1706479200,
+          "closed_slots": 48
+        },
+        {
+          "from": 1706911200,
+          "to": 1707084000,
+          "closed_slots": 48
+        },
+        {
+          "from": 1707516000,
+          "to": 1707688800,
+          "closed_slots": 48
+        },
+        {
+          "from": 1708120800,
+          "to": 1708293600,
+          "closed_slots": 48
+        },
+        {
+          "from": 1708725600,
+          "to": 1708898400,
+          "closed_slots": 48
+        },
+        {
+          "from": 1709330400,
+          "to": 1709503200,
+          "closed_slots": 48
+        },
+        {
+          "from": 1709935200,
+          "to": 1710104400,
+          "closed_slots": 47
+        },
+        {
+          "from": 1710536400,
+          "to": 1710709200,
+          "closed_slots": 48
+        },
+        {
+          "from": 1711141200,
+          "to": 1711314000,
+          "closed_slots": 48
+        },
+        {
+          "from": 1711746000,
+          "to": 1711918800,
+          "closed_slots": 48
+        }
+      ],
+      "interval_details_limit": 100,
+      "edge_coverage": "Only internal gaps are assessed; no coverage outside first/last rows is assumed."
+    }
+  },
+  "checks": {
+    "integrity": "strict CSV parser: ordered unique UTC opens, OHLC bounds, finite positive prices, session calendar",
+    "missing_bars": "retained as gaps; no flat bar fabrication",
+    "repeatability": "exact repeated API responses for 1h/4h/d1",
+    "future_mutation": "identical 900-hour prefix result",
+    "invalid_import": "422"
+  },
+  "results": {
+    "1h": {
+      "visible_candles": 500,
+      "module_runs": [
+        {
+          "module": "indicators",
+          "snapshot_id": "snapshot:7692c2d856cfdbc0b3623988d7569bfc4906e6a7f29e2dca91f025f5efb74cb7",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "struct",
+          "snapshot_id": "snapshot:7692c2d856cfdbc0b3623988d7569bfc4906e6a7f29e2dca91f025f5efb74cb7",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "fxdesk",
+          "snapshot_id": "snapshot:7692c2d856cfdbc0b3623988d7569bfc4906e6a7f29e2dca91f025f5efb74cb7",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "scalper",
+          "snapshot_id": "snapshot:7692c2d856cfdbc0b3623988d7569bfc4906e6a7f29e2dca91f025f5efb74cb7",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "forexdashboard",
+          "snapshot_id": "snapshot:7692c2d856cfdbc0b3623988d7569bfc4906e6a7f29e2dca91f025f5efb74cb7",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "integration",
+          "snapshot_id": "snapshot:7692c2d856cfdbc0b3623988d7569bfc4906e6a7f29e2dca91f025f5efb74cb7",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "sentiment",
+          "snapshot_id": "snapshot:7692c2d856cfdbc0b3623988d7569bfc4906e6a7f29e2dca91f025f5efb74cb7",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "lifecycle",
+          "snapshot_id": "snapshot:7692c2d856cfdbc0b3623988d7569bfc4906e6a7f29e2dca91f025f5efb74cb7",
+          "status": "succeeded",
+          "calculation_version": "p05-causal-v1"
+        }
+      ],
+      "examples": {
+        "structure": {
+          "title": "HH \u00b7 1.08424",
+          "id": "snapshot:7692c2d856cfdbc0b3623988d7569bfc4906e6a7f29e2dca91f025f5efb74cb7:struct:structure-1711375200",
+          "prices": [
+            1.08424
+          ],
+          "explanation": "High pivot at 2024-03-25T14:00:00+00:00. Needs three later candles; the upstream alternating swing sequence may revise. Snapshot finding, not a frozen historical signal.",
+          "evidence_ids": [
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:1h:1711375200"
+          ]
+        },
+        "structure_break": {
+          "title": "BOS \u2193 \u00b7 1.08364",
+          "id": "snapshot:7692c2d856cfdbc0b3623988d7569bfc4906e6a7f29e2dca91f025f5efb74cb7:struct:break-BOS \u2193-1711080000-1.08364",
+          "prices": [
+            1.08364
+          ],
+          "explanation": "Close crossed a structure level. Upstream classification uses the current snapshot trend and may revise; this is not a frozen historical signal.",
+          "evidence_ids": [
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:1h:1711080000"
+          ]
+        },
+        "fair_value_gap": {
+          "title": "FVG \u00b7 1.08020\u20131.08150",
+          "id": "snapshot:7692c2d856cfdbc0b3623988d7569bfc4906e6a7f29e2dca91f025f5efb74cb7:fxdesk:zone-0",
+          "prices": [
+            1.0808499999999999
+          ],
+          "explanation": "Bearish zone; currently tested. Origin time is not its confirmation time. Evaluated using only the current replay prefix.",
+          "evidence_ids": [
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:1h:1711605600"
+          ]
+        },
+        "order_block": {
+          "title": "OB \u00b7 1.08260\u20131.08347",
+          "id": "snapshot:7692c2d856cfdbc0b3623988d7569bfc4906e6a7f29e2dca91f025f5efb74cb7:fxdesk:zone-7",
+          "prices": [
+            1.083035
+          ],
+          "explanation": "Bearish zone; currently tested. Origin time is not its confirmation time. Evaluated using only the current replay prefix.",
+          "evidence_ids": [
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:1h:1711533600"
+          ]
+        },
+        "rsi_divergence": {
+          "title": "Bearish RSI divergence",
+          "id": "snapshot:7692c2d856cfdbc0b3623988d7569bfc4906e6a7f29e2dca91f025f5efb74cb7:integration:divergence-0",
+          "prices": [
+            1.0848,
+            1.08578
+          ],
+          "explanation": "Price 1.08480 \u2192 1.08578; RSI 66.5 \u2192 59.4. Confirmed after three subsequent candles; this is a pattern, not a trade instruction.",
+          "evidence_ids": [
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:1h:1709539200",
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:1h:1709510400",
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:1h:1709550000"
+          ]
+        },
+        "support_resistance": {
+          "title": "Support \u00b7 1.07856",
+          "id": "snapshot:7692c2d856cfdbc0b3623988d7569bfc4906e6a7f29e2dca91f025f5efb74cb7:fxdesk:sr-0",
+          "prices": [
+            1.078565
+          ],
+          "explanation": "Backend S/R cluster with 2 touches. Snapshot level, not a causal historical event.",
+          "evidence_ids": [
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:1h:1709269200",
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:1h:1709272800",
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:1h:1709276400"
+          ]
+        },
+        "supply_demand": {
+          "title": "supply zone",
+          "id": "snapshot:7692c2d856cfdbc0b3623988d7569bfc4906e6a7f29e2dca91f025f5efb74cb7:struct:supply-demand-0",
+          "prices": [
+            1.08238,
+            1.08317
+          ],
+          "explanation": "Supply/demand geometry from the current snapshot; not an immutable event.",
+          "evidence_ids": [
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:1h:1711116000"
+          ]
+        },
+        "bias_reference": {
+          "title": "Daily prior range low \u00b7 1.07751",
+          "id": "snapshot:7692c2d856cfdbc0b3623988d7569bfc4906e6a7f29e2dca91f025f5efb74cb7:integration:daily_bias-level-0",
+          "prices": [
+            1.07751
+          ],
+          "explanation": "Daily mixed: structure mixed; momentum bearish; reference bearish; zone neutral. At the next complete daily close, recompute pivots, EMA/RSI, zones and the rolling range. Crossing midpoint 1.08781 changes reference direction; a close below 1.07751 or above 1.09812 breaks the current reference range. Directional bias requires matching structure and momentum with no opposing context.",
+          "evidence_ids": [
+            "bias:p08-bias-v1:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:daily:1704146400",
+            "bias:p08-bias-v1:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:daily:1704232800",
+            "bias:p08-bias-v1:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:daily:1704319200"
+          ]
+        }
+      },
+      "historical_events": 3974,
+      "daily_bias": "mixed",
+      "weekly_bias": "unavailable"
+    },
+    "4h": {
+      "visible_candles": 384,
+      "module_runs": [
+        {
+          "module": "indicators",
+          "snapshot_id": "snapshot:cad4e882a0be6259f5e351fd146c5b0b1d07c0498abd3c0b56148de2dfb0b65d",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "struct",
+          "snapshot_id": "snapshot:cad4e882a0be6259f5e351fd146c5b0b1d07c0498abd3c0b56148de2dfb0b65d",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "fxdesk",
+          "snapshot_id": "snapshot:cad4e882a0be6259f5e351fd146c5b0b1d07c0498abd3c0b56148de2dfb0b65d",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "scalper",
+          "snapshot_id": "snapshot:cad4e882a0be6259f5e351fd146c5b0b1d07c0498abd3c0b56148de2dfb0b65d",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "forexdashboard",
+          "snapshot_id": "snapshot:cad4e882a0be6259f5e351fd146c5b0b1d07c0498abd3c0b56148de2dfb0b65d",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "integration",
+          "snapshot_id": "snapshot:cad4e882a0be6259f5e351fd146c5b0b1d07c0498abd3c0b56148de2dfb0b65d",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "sentiment",
+          "snapshot_id": "snapshot:cad4e882a0be6259f5e351fd146c5b0b1d07c0498abd3c0b56148de2dfb0b65d",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "lifecycle",
+          "snapshot_id": "snapshot:cad4e882a0be6259f5e351fd146c5b0b1d07c0498abd3c0b56148de2dfb0b65d",
+          "status": "succeeded",
+          "calculation_version": "p05-causal-v1"
+        }
+      ],
+      "examples": {
+        "structure": {
+          "title": "HH \u00b7 1.09812",
+          "id": "snapshot:cad4e882a0be6259f5e351fd146c5b0b1d07c0498abd3c0b56148de2dfb0b65d:struct:structure-1709892000",
+          "prices": [
+            1.09812
+          ],
+          "explanation": "High pivot at 2024-03-08T10:00:00+00:00. Needs three later candles; the upstream alternating swing sequence may revise. Snapshot finding, not a frozen historical signal.",
+          "evidence_ids": [
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:4h:1709892000"
+          ]
+        },
+        "structure_break": {
+          "title": "BOS \u2193 \u00b7 1.08117",
+          "id": "snapshot:cad4e882a0be6259f5e351fd146c5b0b1d07c0498abd3c0b56148de2dfb0b65d:struct:break-BOS \u2193-1709100000-1.08117",
+          "prices": [
+            1.08117
+          ],
+          "explanation": "Close crossed a structure level. Upstream classification uses the current snapshot trend and may revise; this is not a frozen historical signal.",
+          "evidence_ids": [
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:4h:1709100000"
+          ]
+        },
+        "fair_value_gap": {
+          "title": "FVG \u00b7 1.07815\u20131.07867",
+          "id": "snapshot:cad4e882a0be6259f5e351fd146c5b0b1d07c0498abd3c0b56148de2dfb0b65d:fxdesk:zone-0",
+          "prices": [
+            1.0784099999999999
+          ],
+          "explanation": "Bullish zone; currently fresh. Origin time is not its confirmation time. Evaluated using only the current replay prefix.",
+          "evidence_ids": [
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:4h:1711688400"
+          ]
+        },
+        "order_block": {
+          "title": "OB \u00b7 1.08149\u20131.08260",
+          "id": "snapshot:cad4e882a0be6259f5e351fd146c5b0b1d07c0498abd3c0b56148de2dfb0b65d:fxdesk:zone-6",
+          "prices": [
+            1.082045
+          ],
+          "explanation": "Bearish zone; currently tested. Origin time is not its confirmation time. Evaluated using only the current replay prefix.",
+          "evidence_ids": [
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:4h:1711587600"
+          ]
+        },
+        "rsi_divergence": {
+          "title": "Bearish RSI divergence",
+          "id": "snapshot:cad4e882a0be6259f5e351fd146c5b0b1d07c0498abd3c0b56148de2dfb0b65d:integration:divergence-0",
+          "prices": [
+            1.09094,
+            1.09162
+          ],
+          "explanation": "Price 1.09094 \u2192 1.09162; RSI 50.8 \u2192 47.4. Confirmed after three subsequent candles; this is a pattern, not a trade instruction.",
+          "evidence_ids": [
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:4h:1705989600",
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:4h:1705903200",
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:4h:1706032800"
+          ]
+        },
+        "support_resistance": {
+          "title": "Support \u00b7 1.07845",
+          "id": "snapshot:cad4e882a0be6259f5e351fd146c5b0b1d07c0498abd3c0b56148de2dfb0b65d:fxdesk:sr-0",
+          "prices": [
+            1.078452857142857
+          ],
+          "explanation": "Backend S/R cluster with 6 touches. Snapshot level, not a causal historical event.",
+          "evidence_ids": [
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:4h:1704146400",
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:4h:1704160800",
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:4h:1704175200"
+          ]
+        },
+        "supply_demand": {
+          "title": "supply zone",
+          "id": "snapshot:cad4e882a0be6259f5e351fd146c5b0b1d07c0498abd3c0b56148de2dfb0b65d:struct:supply-demand-0",
+          "prices": [
+            1.08376,
+            1.08659
+          ],
+          "explanation": "Supply/demand geometry from the current snapshot; not an immutable event.",
+          "evidence_ids": [
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:4h:1709013600"
+          ]
+        },
+        "bias_reference": {
+          "title": "Daily prior range low \u00b7 1.07751",
+          "id": "snapshot:cad4e882a0be6259f5e351fd146c5b0b1d07c0498abd3c0b56148de2dfb0b65d:integration:daily_bias-level-0",
+          "prices": [
+            1.07751
+          ],
+          "explanation": "Daily mixed: structure mixed; momentum bearish; reference bearish; zone neutral. At the next complete daily close, recompute pivots, EMA/RSI, zones and the rolling range. Crossing midpoint 1.08781 changes reference direction; a close below 1.07751 or above 1.09812 breaks the current reference range. Directional bias requires matching structure and momentum with no opposing context.",
+          "evidence_ids": [
+            "bias:p08-bias-v1:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:daily:1704146400",
+            "bias:p08-bias-v1:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:daily:1704232800",
+            "bias:p08-bias-v1:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:daily:1704319200"
+          ]
+        }
+      },
+      "historical_events": 1083,
+      "daily_bias": "mixed",
+      "weekly_bias": "unavailable"
+    },
+    "d1": {
+      "visible_candles": 64,
+      "module_runs": [
+        {
+          "module": "indicators",
+          "snapshot_id": "snapshot:230b9eb0e3ac1051060fbfe952e207b5f5e8a09fb4a60611f13c0d03ce2f7250",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "struct",
+          "snapshot_id": "snapshot:230b9eb0e3ac1051060fbfe952e207b5f5e8a09fb4a60611f13c0d03ce2f7250",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "fxdesk",
+          "snapshot_id": "snapshot:230b9eb0e3ac1051060fbfe952e207b5f5e8a09fb4a60611f13c0d03ce2f7250",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "scalper",
+          "snapshot_id": "snapshot:230b9eb0e3ac1051060fbfe952e207b5f5e8a09fb4a60611f13c0d03ce2f7250",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "forexdashboard",
+          "snapshot_id": "snapshot:230b9eb0e3ac1051060fbfe952e207b5f5e8a09fb4a60611f13c0d03ce2f7250",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "integration",
+          "snapshot_id": "snapshot:230b9eb0e3ac1051060fbfe952e207b5f5e8a09fb4a60611f13c0d03ce2f7250",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "sentiment",
+          "snapshot_id": "snapshot:230b9eb0e3ac1051060fbfe952e207b5f5e8a09fb4a60611f13c0d03ce2f7250",
+          "status": "succeeded",
+          "calculation_version": "p04-adapters-v1"
+        },
+        {
+          "module": "lifecycle",
+          "snapshot_id": "snapshot:230b9eb0e3ac1051060fbfe952e207b5f5e8a09fb4a60611f13c0d03ce2f7250",
+          "status": "succeeded",
+          "calculation_version": "p05-causal-v1"
+        }
+      ],
+      "examples": {
+        "structure": {
+          "title": "LL \u00b7 1.08445",
+          "id": "snapshot:230b9eb0e3ac1051060fbfe952e207b5f5e8a09fb4a60611f13c0d03ce2f7250:struct:structure-1705442400",
+          "prices": [
+            1.08445
+          ],
+          "explanation": "Low pivot at 2024-01-16T22:00:00+00:00. Needs three later candles; the upstream alternating swing sequence may revise. Snapshot finding, not a frozen historical signal.",
+          "evidence_ids": [
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:d1:1705442400"
+          ]
+        },
+        "structure_break": {
+          "title": "BOS \u2191 \u00b7 1.08055",
+          "id": "snapshot:230b9eb0e3ac1051060fbfe952e207b5f5e8a09fb4a60611f13c0d03ce2f7250:struct:break-BOS \u2191-1708466400-1.08055",
+          "prices": [
+            1.08055
+          ],
+          "explanation": "Close crossed a structure level. Upstream classification uses the current snapshot trend and may revise; this is not a frozen historical signal.",
+          "evidence_ids": [
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:d1:1708466400"
+          ]
+        },
+        "fair_value_gap": {
+          "title": "FVG \u00b7 1.08424\u20131.08554",
+          "id": "snapshot:230b9eb0e3ac1051060fbfe952e207b5f5e8a09fb4a60611f13c0d03ce2f7250:fxdesk:zone-0",
+          "prices": [
+            1.0848900000000001
+          ],
+          "explanation": "Bearish zone; currently tested. Origin time is not its confirmation time. Evaluated using only the current replay prefix.",
+          "evidence_ids": [
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:d1:1710968400"
+          ]
+        },
+        "rsi_divergence": {
+          "title": "Bullish RSI divergence",
+          "id": "snapshot:230b9eb0e3ac1051060fbfe952e207b5f5e8a09fb4a60611f13c0d03ce2f7250:integration:divergence-0",
+          "prices": [
+            1.07225,
+            1.06949
+          ],
+          "explanation": "Price 1.07225 \u2192 1.06949; RSI 33.7 \u2192 34.2. Confirmed after three subsequent candles; this is a pattern, not a trade instruction.",
+          "evidence_ids": [
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:d1:1707861600",
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:d1:1707170400",
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:d1:1708293600"
+          ]
+        },
+        "support_resistance": {
+          "title": "Resistance \u00b7 1.08010",
+          "id": "snapshot:230b9eb0e3ac1051060fbfe952e207b5f5e8a09fb4a60611f13c0d03ce2f7250:fxdesk:sr-0",
+          "prices": [
+            1.0800999999999998
+          ],
+          "explanation": "Backend S/R cluster with 3 touches. Snapshot level, not a causal historical event.",
+          "evidence_ids": [
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:d1:1704146400",
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:d1:1704232800",
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:d1:1704319200"
+          ]
+        },
+        "supply_demand": {
+          "title": "supply zone",
+          "id": "snapshot:230b9eb0e3ac1051060fbfe952e207b5f5e8a09fb4a60611f13c0d03ce2f7250:struct:supply-demand-0",
+          "prices": [
+            1.09472,
+            1.1
+          ],
+          "explanation": "Supply/demand geometry from the current snapshot; not an immutable event.",
+          "evidence_ids": [
+            "e:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:d1:1704924000"
+          ]
+        },
+        "bias_reference": {
+          "title": "Daily prior range low \u00b7 1.07751",
+          "id": "snapshot:230b9eb0e3ac1051060fbfe952e207b5f5e8a09fb4a60611f13c0d03ce2f7250:integration:daily_bias-level-0",
+          "prices": [
+            1.07751
+          ],
+          "explanation": "Daily mixed: structure mixed; momentum bearish; reference bearish; zone neutral. At the next complete daily close, recompute pivots, EMA/RSI, zones and the rolling range. Crossing midpoint 1.08781 changes reference direction; a close below 1.07751 or above 1.09812 breaks the current reference range. Directional bias requires matching structure and momentum with no opposing context.",
+          "evidence_ids": [
+            "bias:p08-bias-v1:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:daily:1704146400",
+            "bias:p08-bias-v1:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:daily:1704232800",
+            "bias:p08-bias-v1:83b970432a4a0d1d068d87f40a3e71a373d9587b62fd0266a01cdd15927956c8:EUR/USD:daily:1704319200"
+          ]
+        }
+      },
+      "historical_events": 133,
+      "daily_bias": "mixed",
+      "weekly_bias": "unavailable"
+    }
+  }
+}

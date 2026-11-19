@@ -1,0 +1,14 @@
+{
+  "artifact": "confluence-beta-0.1-rc1-internal.zip",
+  "status": "internal candidate; NOT approved for redistribution",
+  "sha256": "1a6c5345d09e4d2ce6978f884baaed48e84957f6bfe294052b79bba85e386cbc",
+  "files": 173,
+  "excluded": [
+    "user databases",
+    "market datasets",
+    "credentials",
+    "environments",
+    "node_modules"
+  ],
+  "acceptance": "P16-A passed; P16-B incomplete"
+}

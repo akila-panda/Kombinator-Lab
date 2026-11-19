@@ -1,0 +1,18 @@
+{
+  "phase": "P12",
+  "date": "2026-11-16",
+  "policy": "p12-account-v1",
+  "pytest": {
+    "passed": 220,
+    "seconds": 32.34,
+    "warnings": 1,
+    "new_account_cases": 26
+  },
+  "dependencies": "passed",
+  "production_build": "passed",
+  "http_account_smoke": "passed",
+  "real_minute_account_scenario": "passed",
+  "browser": "not repeated; no frontend change",
+  "preview_8766": "untouched; new backend routes load on next restart",
+  "next_phase": "P13; waiting for explicit Proceed"
+}

@@ -1,0 +1,190 @@
+{
+  "$defs": {
+    "BookBucket": {
+      "additionalProperties": false,
+      "properties": {
+        "price": {
+          "exclusiveMinimum": 0,
+          "title": "Price",
+          "type": "number"
+        },
+        "shortCountPercent": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Shortcountpercent",
+          "type": "number"
+        },
+        "longCountPercent": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Longcountpercent",
+          "type": "number"
+        }
+      },
+      "required": [
+        "price",
+        "shortCountPercent",
+        "longCountPercent"
+      ],
+      "title": "BookBucket",
+      "type": "object"
+    },
+    "BookInput": {
+      "additionalProperties": false,
+      "properties": {
+        "time": {
+          "title": "Time",
+          "type": "string"
+        },
+        "retrieved_at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Retrieved At"
+        },
+        "price": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Price"
+        },
+        "bucketWidth": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bucketwidth"
+        },
+        "buckets": {
+          "items": {
+            "$ref": "#/$defs/BookBucket"
+          },
+          "maxItems": 10000,
+          "minItems": 1,
+          "title": "Buckets",
+          "type": "array"
+        }
+      },
+      "required": [
+        "time",
+        "buckets"
+      ],
+      "title": "BookInput",
+      "type": "object"
+    },
+    "BookSnapshotInput": {
+      "additionalProperties": false,
+      "properties": {
+        "instrument": {
+          "enum": [
+            "EUR_USD",
+            "GBP_USD",
+            "USD_JPY"
+          ],
+          "title": "Instrument",
+          "type": "string"
+        },
+        "positionBook": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BookInput"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "orderBook": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BookInput"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "instrument"
+      ],
+      "title": "BookSnapshotInput",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "dataset_id": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Dataset Id",
+      "type": "string"
+    },
+    "interval": {
+      "default": "1h",
+      "enum": [
+        "1h",
+        "4h",
+        "d1"
+      ],
+      "title": "Interval",
+      "type": "string"
+    },
+    "cutoff": {
+      "maximum": 250000,
+      "minimum": 1,
+      "title": "Cutoff",
+      "type": "integer"
+    },
+    "snapshot": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/BookSnapshotInput"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "archive_id": {
+      "anyOf": [
+        {
+          "pattern": "^[a-f0-9]{64}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Archive Id"
+    }
+  },
+  "required": [
+    "dataset_id",
+    "cutoff"
+  ],
+  "title": "DatasetAnalysisRequest",
+  "type": "object"
+}

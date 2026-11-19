@@ -1,0 +1,367 @@
+{
+  "$defs": {
+    "BookBucket": {
+      "additionalProperties": false,
+      "properties": {
+        "price": {
+          "exclusiveMinimum": 0,
+          "title": "Price",
+          "type": "number"
+        },
+        "shortCountPercent": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Shortcountpercent",
+          "type": "number"
+        },
+        "longCountPercent": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Longcountpercent",
+          "type": "number"
+        }
+      },
+      "required": [
+        "price",
+        "shortCountPercent",
+        "longCountPercent"
+      ],
+      "title": "BookBucket",
+      "type": "object"
+    },
+    "BookInput": {
+      "additionalProperties": false,
+      "properties": {
+        "time": {
+          "title": "Time",
+          "type": "string"
+        },
+        "retrieved_at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Retrieved At"
+        },
+        "price": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Price"
+        },
+        "bucketWidth": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bucketwidth"
+        },
+        "buckets": {
+          "items": {
+            "$ref": "#/$defs/BookBucket"
+          },
+          "maxItems": 10000,
+          "minItems": 1,
+          "title": "Buckets",
+          "type": "array"
+        }
+      },
+      "required": [
+        "time",
+        "buckets"
+      ],
+      "title": "BookInput",
+      "type": "object"
+    },
+    "BookSnapshotInput": {
+      "additionalProperties": false,
+      "properties": {
+        "instrument": {
+          "enum": [
+            "EUR_USD",
+            "GBP_USD",
+            "USD_JPY"
+          ],
+          "title": "Instrument",
+          "type": "string"
+        },
+        "positionBook": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BookInput"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "orderBook": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/BookInput"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "instrument"
+      ],
+      "title": "BookSnapshotInput",
+      "type": "object"
+    },
+    "CandleInput": {
+      "additionalProperties": false,
+      "properties": {
+        "time": {
+          "maximum": 4102441200,
+          "minimum": 0,
+          "title": "Time",
+          "type": "integer"
+        },
+        "open": {
+          "exclusiveMinimum": 0,
+          "title": "Open",
+          "type": "number"
+        },
+        "high": {
+          "exclusiveMinimum": 0,
+          "title": "High",
+          "type": "number"
+        },
+        "low": {
+          "exclusiveMinimum": 0,
+          "title": "Low",
+          "type": "number"
+        },
+        "close": {
+          "exclusiveMinimum": 0,
+          "title": "Close",
+          "type": "number"
+        },
+        "volume": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Volume"
+        },
+        "symbol": {
+          "anyOf": [
+            {
+              "enum": [
+                "EUR/USD",
+                "GBP/USD",
+                "USD/JPY"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Symbol"
+        },
+        "timeframe": {
+          "anyOf": [
+            {
+              "enum": [
+                "1m",
+                "5m",
+                "15m",
+                "1h",
+                "4h",
+                "d1",
+                "w1"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Timeframe"
+        },
+        "state": {
+          "const": "completed",
+          "default": "completed",
+          "title": "State",
+          "type": "string"
+        }
+      },
+      "required": [
+        "time",
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "title": "CandleInput",
+      "type": "object"
+    },
+    "DataSource": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "synthetic",
+            "user_upload",
+            "provider",
+            "unknown"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "description": {
+          "minLength": 1,
+          "pattern": ".*\\S.*",
+          "title": "Description",
+          "type": "string"
+        },
+        "volume_type": {
+          "default": "unknown",
+          "enum": [
+            "tick_count",
+            "base_units",
+            "quote_units",
+            "unknown"
+          ],
+          "title": "Volume Type",
+          "type": "string"
+        },
+        "provenance_verified": {
+          "default": false,
+          "title": "Provenance Verified",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "description"
+      ],
+      "title": "DataSource",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "symbol": {
+      "default": "EUR/USD",
+      "enum": [
+        "EUR/USD",
+        "GBP/USD",
+        "USD/JPY"
+      ],
+      "title": "Symbol",
+      "type": "string"
+    },
+    "interval": {
+      "default": "1h",
+      "enum": [
+        "1h",
+        "4h",
+        "d1"
+      ],
+      "title": "Interval",
+      "type": "string"
+    },
+    "base_timeframe": {
+      "const": "1h",
+      "default": "1h",
+      "title": "Base Timeframe",
+      "type": "string"
+    },
+    "candles": {
+      "items": {
+        "$ref": "#/$defs/CandleInput"
+      },
+      "maxItems": 12000,
+      "minItems": 60,
+      "title": "Candles",
+      "type": "array"
+    },
+    "cutoff": {
+      "anyOf": [
+        {
+          "maximum": 12000,
+          "minimum": 60,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Cutoff"
+    },
+    "snapshot": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/BookSnapshotInput"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "archive_id": {
+      "anyOf": [
+        {
+          "pattern": "^[a-f0-9]{64}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Archive Id"
+    },
+    "data_source": {
+      "$ref": "#/$defs/DataSource"
+    }
+  },
+  "required": [
+    "candles"
+  ],
+  "title": "AnalysisRequest",
+  "type": "object"
+}

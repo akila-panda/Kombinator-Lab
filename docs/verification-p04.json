@@ -1,0 +1,29 @@
+{
+  "phase": "P04",
+  "date": "2026-11-11",
+  "status": "complete",
+  "packets": [
+    "P04-A",
+    "P04-B",
+    "P04-C"
+  ],
+  "tests": {
+    "passed": 117,
+    "failed": 0,
+    "seconds": 13.73,
+    "warning": "Starlette TestClient httpx deprecation"
+  },
+  "checks": {
+    "dependency_consistency": "passed",
+    "typescript_vite_build": "passed",
+    "real_http_smoke": "passed",
+    "provenance_mappings": 19,
+    "diff_whitespace": "passed"
+  },
+  "schema_version": "1.1.0",
+  "calculation_version": "p04-adapters-v1",
+  "indicator_version": "p04-indicators-v1",
+  "storage_version": 1,
+  "browser": "Not rerun; frontend unchanged. P03 file-selection limitation retained.",
+  "next": "P05 only after explicit user authorization"
+}
